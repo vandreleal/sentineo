@@ -61,6 +61,11 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  dt {
+    height: auto !important;
+    white-space: normal !important;
+  }
+
   table {
     min-width: 650px;
   }

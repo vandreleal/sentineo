@@ -8,7 +8,7 @@
 <p align="center">
     <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Fsentineo.app">
     <img alt="David" src="https://img.shields.io/david/vandreleal/sentineo">
-    <a href="https://github.com/vandreleal/sentineo/blob/dev/LICENSE">
+    <a href="https://github.com/vandreleal/sentineo/blob/main/LICENSE">
         <img alt="GitHub license" src="https://img.shields.io/github/license/vandreleal/sentineo">
     </a>
     <a href="http://commitizen.github.io/cz-cli">
