@@ -21,10 +21,7 @@ function TableReport({ data: { near_earth_objects } }) {
       <ButtonGroup size="mini" ghost>
         <Button
           onClick={() => {
-            router.push({
-              pathname: "/object/[id]",
-              query: { id: id },
-            });
+            router.push(`/object/${id}`);
           }}
         >
           Details
