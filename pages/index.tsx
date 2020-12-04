@@ -33,8 +33,8 @@ function Home() {
       {loadableFeed.state === "hasValue" && <TableReport data={feed} />}
 
       {/* Loading */}
-      {loadableFeed.state === "loading" ||
-        (loadableAPOD.state === "loading" && <Loading>Loading</Loading>)}
+      {(loadableFeed.state === "loading" ||
+        loadableAPOD.state === "loading") && <Loading>Loading</Loading>}
     </>
   );
 }
