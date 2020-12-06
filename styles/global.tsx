@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    padding: 1rem 0 240px !important;
+    padding: 1rem 0 140px !important;
   }
 
   .btn {

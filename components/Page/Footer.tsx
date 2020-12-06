@@ -23,30 +23,18 @@ function PageFooter() {
         style={{ textAlign: "center" }}
       >
         <Grid>
-          <Text span b size={14} style={{ display: "block", margin: "8px 0" }}>
+          <Text span b size={14} style={{ display: "block" }}>
             Built by{" "}
             <Link
               href="https://vandreleal.github.io"
               rel="noopener"
               target="_blank"
             >
-              Vandré
+              Vandré Leal
             </Link>
           </Text>
 
-          <a
-            href="https://www.buymeacoffee.com/vandre"
-            rel="noopener"
-            target="_blank"
-          >
-            <img
-              alt="Buy Me A Coffee"
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png"
-              style={{ height: "50px !important", width: "180px !important" }}
-            />
-          </a>
-
-          <Text size={10}>
+          <Text span size={10}>
             Icons made by{" "}
             <a
               href="https://www.flaticon.com/authors/good-ware"
@@ -73,7 +61,7 @@ function PageFooter() {
             onClick={() => {
               window.open("https://github.com/vandreleal/sentineo");
             }}
-            style={{ position: "fixed", right: 4, bottom: 16 }}
+            style={{ position: "fixed", right: 8, bottom: 16 }}
           />
         </Grid>
       </Grid.Container>
