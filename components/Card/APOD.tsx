@@ -14,7 +14,7 @@ const APOD = styled(Image)`
   transition: all ease-in 1s;
 
   img {
-    max-height: 400px;
+    max-height: 540px;
     object-fit: cover !important;
   }
 
@@ -27,19 +27,29 @@ function CardAPOD({ data }) {
   return (
     <Card key={data.id}>
       <Card.Content style={{ padding: 0 }}>
-        <ImageBrowser
-          title={data.title}
-          url={data.hdurl}
-          showFullLink
-          anchorProps={{ rel: "noopener" }}
-        >
-          <APOD
+        {data.media_type === "video" ? (
+          <iframe
+            width="100%"
+            height="540"
             src={data.url}
-            alt="Astronomy Picture of the Day"
-            width={960}
-            height={600}
-          />
-        </ImageBrowser>
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <ImageBrowser
+            title={data.title}
+            url={data.hdurl}
+            showFullLink
+            anchorProps={{ rel: "noopener" }}
+          >
+            <APOD
+              src={data.url}
+              alt="Astronomy Picture of the Day"
+              width={960}
+              height={540}
+            />
+          </ImageBrowser>
+        )}
       </Card.Content>
 
       <Divider y={0} />
