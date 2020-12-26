@@ -7,7 +7,13 @@ import GitHub from "@geist-ui/react-icons/github";
 // Custom Components
 const ButtonRound = dynamic(() => import("@/components/Button/Round"));
 
-function PageFooter() {
+interface Props {}
+const defaultProps = {};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type PageFooterProps = Props & typeof defaultProps & NativeAttrs;
+
+const PageFooter: React.FC<React.PropsWithChildren<PageFooterProps>> = ({}) => {
   return (
     <Page.Footer
       style={{
@@ -67,5 +73,6 @@ function PageFooter() {
       </Grid.Container>
     </Page.Footer>
   );
-}
+};
+
 export default PageFooter;
