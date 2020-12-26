@@ -13,7 +13,23 @@ import Sun from "@geist-ui/react-icons/sun";
 const ButtonRound = dynamic(() => import("@/components/Button/Round"));
 const ModalSettings = dynamic(() => import("@/components/Modal/Settings"));
 
-function PageHeader({ themeType, switchTheme }) {
+interface Props {
+  themeType: string;
+  switchTheme: any;
+}
+
+const defaultProps = {
+  themeType: "dark",
+  switchTheme: null,
+};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type PageHeaderProps = Props & typeof defaultProps & NativeAttrs;
+
+const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
+  themeType,
+  switchTheme,
+}) => {
   const router = useRouter();
   const { setVisible, bindings } = useModal();
 
@@ -74,5 +90,6 @@ function PageHeader({ themeType, switchTheme }) {
       </Grid.Container>
     </Page.Header>
   );
-}
+};
+
 export default PageHeader;

@@ -10,7 +10,24 @@ import {
   Table,
 } from "@geist-ui/react";
 
-function TableReport({ data: { near_earth_objects } }) {
+interface Props {
+  data: {
+    near_earth_objects: object;
+  };
+  loading: boolean;
+}
+
+const defaultProps = {
+  data: null,
+};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type TableReportProps = Props & typeof defaultProps & NativeAttrs;
+
+const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
+  data,
+}) => {
+  const { near_earth_objects } = data;
   const preferences = useRecoilValue(appStateDetailed);
   const router = useRouter();
 
@@ -104,24 +121,26 @@ function TableReport({ data: { near_earth_objects } }) {
                     }
                   `}
                 >
-                  <Table data={data} emptyText="No objects">
-                    <Table.Column
-                      prop="hazardous"
-                      label="Potentially Hazardous?"
-                      width={125}
-                    />
-                    <Table.Column prop="name" label="Name" />
-                    <Table.Column
-                      prop={`prop_miss_distance`}
-                      label={`Miss Distance (${preferences["miss_distance"].unit})`}
-                      width={200}
-                    />
-                    <Table.Column
-                      prop="absolute_magnitude_h"
-                      label="Abs Magnitude"
-                    />
-                    <Table.Column prop="actions" label="" width={50} />
-                  </Table>
+                  {data && (
+                    <Table data={data} emptyText="No objects">
+                      <Table.Column
+                        prop="hazardous"
+                        label="Potentially Hazardous?"
+                        width={125}
+                      />
+                      <Table.Column prop="name" label="Name" />
+                      <Table.Column
+                        prop={`prop_miss_distance`}
+                        label={`Miss Distance (${preferences["miss_distance"].unit})`}
+                        width={200}
+                      />
+                      <Table.Column
+                        prop="absolute_magnitude_h"
+                        label="Abs Magnitude"
+                      />
+                      <Table.Column prop="actions" label="" width={50} />
+                    </Table>
+                  )}
                 </Grid>
               </Collapse>
             </Collapse.Group>
@@ -131,6 +150,6 @@ function TableReport({ data: { near_earth_objects } }) {
   };
 
   return <>{renderReport()}</>;
-}
+};
 
 export default TableReport;

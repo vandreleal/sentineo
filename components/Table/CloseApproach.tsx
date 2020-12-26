@@ -1,8 +1,24 @@
 import { useRecoilValue } from "recoil";
 import { appStateDetailed } from "@/recoil/app";
-import { Collapse, Grid, Table } from "@geist-ui/react";
+import { Collapse, Grid, Loading, Table } from "@geist-ui/react";
 
-function TableCloseApproach({ data: { close_approach_data } }) {
+interface Props {
+  data: {
+    close_approach_data: object;
+  };
+}
+
+const defaultProps = {
+  data: null,
+};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type TableCloseApproachProps = Props & typeof defaultProps & NativeAttrs;
+
+const TableCloseApproach: React.FC<
+  React.PropsWithChildren<TableCloseApproachProps>
+> = ({ data }) => {
+  const { close_approach_data } = data;
   const preferences = useRecoilValue(appStateDetailed);
 
   const getAttributeByPref = (item: any, attribute: string) => {
@@ -53,22 +69,28 @@ function TableCloseApproach({ data: { close_approach_data } }) {
               }
             `}
           >
-            <Table data={tableData} emptyText="No close approaches">
-              <Table.Column prop="orbiting_body" label="Orbiting" width={125} />
-              <Table.Column
-                prop="close_approach_date_full"
-                label="Date"
-                width={175}
-              />
-              <Table.Column
-                prop={`prop_miss_distance`}
-                label={`Miss Distance (${preferences["miss_distance"].unit})`}
-              />
-              <Table.Column
-                prop={`prop_relative_velocity`}
-                label={`Relative Velocity (${preferences["relative_velocity"].unit})`}
-              />
-            </Table>
+            {data && (
+              <Table data={tableData} emptyText="No close approaches">
+                <Table.Column
+                  prop="orbiting_body"
+                  label="Orbiting"
+                  width={125}
+                />
+                <Table.Column
+                  prop="close_approach_date_full"
+                  label="Date"
+                  width={175}
+                />
+                <Table.Column
+                  prop={`prop_miss_distance`}
+                  label={`Miss Distance (${preferences["miss_distance"].unit})`}
+                />
+                <Table.Column
+                  prop={`prop_relative_velocity`}
+                  label={`Relative Velocity (${preferences["relative_velocity"].unit})`}
+                />
+              </Table>
+            )}
           </Grid>
         </Collapse>
       </Collapse.Group>
@@ -76,6 +98,6 @@ function TableCloseApproach({ data: { close_approach_data } }) {
   };
 
   return <>{renderData()}</>;
-}
+};
 
 export default TableCloseApproach;

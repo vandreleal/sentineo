@@ -21,7 +21,20 @@ const options = {
   ],
 };
 
-function ModalSettings({ setVisible, bindings }) {
+interface Props {
+  setVisible: any;
+  bindings: any;
+}
+
+const defaultProps = {};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type ModalSettingsProps = Props & typeof defaultProps & NativeAttrs;
+
+const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
+  setVisible,
+  bindings,
+}) => {
   const [preferences, setPreferences] = useRecoilState(appState);
 
   const onSelectChange = (val: string, key: string) => {
@@ -94,5 +107,6 @@ function ModalSettings({ setVisible, bindings }) {
       </Modal>
     )
   );
-}
+};
+
 export default ModalSettings;

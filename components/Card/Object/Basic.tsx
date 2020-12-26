@@ -11,7 +11,24 @@ import {
   useMediaQuery,
 } from "@geist-ui/react";
 
-function CardObjectBasic({ data }) {
+interface Props {
+  data: {
+    absolute_magnitude_h: string;
+    estimated_diameter: string;
+    is_potentially_hazardous_asteroid: boolean;
+    name: string;
+    nasa_jpl_url: string;
+  };
+}
+
+const defaultProps = {};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type CardObjectBasicProps = Props & typeof defaultProps & NativeAttrs;
+
+const CardObjectBasic: React.FC<
+  React.PropsWithChildren<CardObjectBasicProps>
+> = ({ data }) => {
   const mqUpSM = useMediaQuery("sm", { match: "up" });
   const preferences = useRecoilValue(appStateDetailed);
 
@@ -70,6 +87,6 @@ function CardObjectBasic({ data }) {
       </Card.Footer>
     </Card>
   );
-}
+};
 
 export default CardObjectBasic;

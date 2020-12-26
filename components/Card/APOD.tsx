@@ -23,7 +23,27 @@ const APOD = styled(Image)`
   }
 `;
 
-function CardAPOD({ data }) {
+interface Props {
+  data: {
+    id: string;
+    copyright: string;
+    date: string;
+    explanation: string;
+    hdurl: string;
+    media_type: string;
+    title: string;
+    url: string;
+  };
+}
+
+const defaultProps = {};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type CardAPODProps = Props & typeof defaultProps & NativeAttrs;
+
+const CardAPOD: React.FC<React.PropsWithChildren<CardAPODProps>> = ({
+  data,
+}) => {
   return (
     <Card key={data.id}>
       <Card.Content style={{ padding: 0 }}>
@@ -92,6 +112,6 @@ function CardAPOD({ data }) {
       </Card.Content>
     </Card>
   );
-}
+};
 
 export default CardAPOD;

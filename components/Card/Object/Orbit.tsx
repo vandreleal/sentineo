@@ -1,6 +1,25 @@
 import { Collapse, Description, Divider, Grid, Text } from "@geist-ui/react";
 
-function CardAsteroidOrbit({ data }) {
+interface Props {
+  data: {
+    orbital_data: {
+      orbit_class: {
+        orbit_class_description: string;
+        orbit_class_range: string;
+        orbit_class_type: string;
+      };
+    };
+  };
+}
+
+const defaultProps = {};
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type CardObjectOrbitProps = Props & typeof defaultProps & NativeAttrs;
+
+const CardObjectOrbit: React.FC<
+  React.PropsWithChildren<CardObjectOrbitProps>
+> = ({ data }) => {
   const { orbital_data } = data;
 
   const renderData = () => {
@@ -45,6 +64,6 @@ function CardAsteroidOrbit({ data }) {
   };
 
   return <>{renderData()}</>;
-}
+};
 
-export default CardAsteroidOrbit;
+export default CardObjectOrbit;
