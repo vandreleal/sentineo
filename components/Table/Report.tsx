@@ -14,7 +14,6 @@ interface Props {
   data: {
     near_earth_objects: object;
   };
-  loading: boolean;
 }
 
 const defaultProps = {
