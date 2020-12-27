@@ -59,31 +59,37 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
         </Grid>
 
         <Grid>
-          <Tooltip text={"Glossary"} placement="bottom">
-            <ButtonRound
-              aria-label="Glossary"
-              icon={<Book />}
-              onClick={() => {
-                router.push("/glossary");
-              }}
-            />
-          </Tooltip>
-
-          <Tooltip text={"Theme"} placement="bottom">
-            <ButtonRound
-              aria-label="Theme"
-              icon={themeType === "dark" ? <Moon /> : <Sun />}
-              onClick={switchTheme}
-            />
-          </Tooltip>
-
-          <Tooltip text={"Settings"} placement="bottom">
-            <ButtonRound
-              aria-label="Settings"
-              icon={<Settings />}
-              onClick={() => setVisible(true)}
-            />
-          </Tooltip>
+          <Grid.Container gap={1} alignItems="center">
+            <Grid>
+              <Tooltip text={"Glossary"} placement="bottom">
+                <ButtonRound
+                  aria-label="Glossary"
+                  icon={<Book />}
+                  onClick={() => {
+                    router.push("/glossary");
+                  }}
+                />
+              </Tooltip>
+            </Grid>
+            <Grid>
+              <Tooltip text={"Theme"} placement="bottom">
+                <ButtonRound
+                  aria-label="Theme"
+                  icon={themeType === "dark" ? <Moon /> : <Sun />}
+                  onClick={switchTheme}
+                />
+              </Tooltip>
+            </Grid>
+            <Grid>
+              <Tooltip text={"Settings"} placement="bottom">
+                <ButtonRound
+                  aria-label="Settings"
+                  icon={<Settings />}
+                  onClick={() => setVisible(true)}
+                />
+              </Tooltip>
+            </Grid>
+          </Grid.Container>
 
           <ModalSettings setVisible={setVisible} bindings={bindings} />
         </Grid>
