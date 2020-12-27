@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 const StyledButton = styled(Button)`
   padding: 0 !important;
-  height: 2rem !important;
-  width: 2rem !important;
+  width: 2.5rem !important;
   min-width: auto !important;
   border-radius: 50% !important;
   border-width: 2px !important;
