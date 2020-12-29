@@ -36,7 +36,7 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
   return (
     <Page.Header center>
       <Grid.Container gap={1} alignItems="center" justify="space-between">
-        <Grid sm={8}>
+        <Grid sm>
           <Grid.Container gap={1}>
             <Grid>
               <Image src="/telescope.svg" alt="Logo" width={56} height={56} />
@@ -58,7 +58,7 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
           </Grid.Container>
         </Grid>
 
-        <Grid>
+        <Grid style={{ width: 160 }}>
           <Grid.Container gap={1} alignItems="center">
             <Grid>
               <Tooltip text={"Glossary"} placement="bottom">

@@ -4,19 +4,21 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
 
-    &::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
+    div {
+      &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
 
-      &-track {
-        background: GhostWhite, 0.25;
-        box-shadow: inset 0 0 6px rgba(black, 0.15);
-      }
+        &-track {
+          background: GhostWhite, 0.25;
+          box-shadow: inset 0 0 6px rgba(black, 0.15);
+        }
 
-      &-thumb {
-        background-color: DarkGray;
-        border-radius: 25px;
-        border: 3px solid transparent;
+        &-thumb {
+          background-color: DarkGray;
+          border-radius: 25px;
+          border: 3px solid transparent;
+        }
       }
     }
   }
@@ -37,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    padding: 1rem 0 140px !important;
+    padding: 1rem 0 120px !important;
   }
 
   .btn {
@@ -68,6 +70,13 @@ const GlobalStyle = createGlobalStyle`
 
   table {
     min-width: 650px;
+  }
+
+  @media print {
+    header,
+    footer {
+      display: none;
+    }
   }
 `;
 

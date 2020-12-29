@@ -67,7 +67,12 @@ const PageFooter: React.FC<React.PropsWithChildren<PageFooterProps>> = ({}) => {
             onClick={() => {
               window.open("https://github.com/vandreleal/sentineo");
             }}
-            style={{ position: "fixed", right: 8, bottom: 16 }}
+            style={{
+              zIndex: 10,
+              position: "fixed",
+              right: 16,
+              bottom: 16,
+            }}
           />
         </Grid>
       </Grid.Container>
