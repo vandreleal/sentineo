@@ -43,7 +43,10 @@ function App({ Component, pageProps }: AppProps) {
           />
         </Head>
 
-        <Page dotBackdrop={true} style={{ paddingTop: "1rem" }}>
+        <Page
+          dotBackdrop={true}
+          style={{ paddingTop: "1rem", maxWidth: "100%", maxHeight: "100%" }}
+        >
           <PageHeader themeType={themeType} switchTheme={switchTheme} />
 
           <Page.Content>
