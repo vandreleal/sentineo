@@ -15,7 +15,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@geist-ui/react": "^2.1.0-canary.2",
+    "@geist-ui/react": "^2.1.1",
     "@geist-ui/react-icons": "^1.0.1",
     "@next/bundle-analyzer": "^10.0.5",
     "date-fns": "^2.17.0",
