@@ -28,7 +28,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.33",
+    "@types/node": "^14.14.34",
     "@types/react": "^17.0.3",
     "@types/styled-components": "^5.1.8",
     "babel-plugin-styled-components": "^1.12.0",
