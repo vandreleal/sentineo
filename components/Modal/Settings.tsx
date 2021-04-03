@@ -59,7 +59,7 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
             alignContent="center"
             justify="center"
           >
-            <Grid xs={24}>
+            <Grid xs={24} direction="column">
               <Label>Estimated Diameter</Label>
 
               <Radio.Group
@@ -73,7 +73,7 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
               </Radio.Group>
             </Grid>
 
-            <Grid xs={24}>
+            <Grid xs={24} direction="column">
               <Label>Miss Distance</Label>
 
               <Radio.Group
@@ -85,7 +85,7 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
               </Radio.Group>
             </Grid>
 
-            <Grid xs={24}>
+            <Grid xs={24} direction="column">
               <Label>Relative Velocity</Label>
 
               <Radio.Group
