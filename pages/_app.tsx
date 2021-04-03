@@ -21,18 +21,9 @@ function App({ Component, pageProps }: AppProps) {
     );
   };
 
-  const theme = {
-    type: themeType,
-    palette: {
-      success: "#34d691",
-      successLight: "#03ac08",
-      successDark: "#5e845d",
-    },
-  };
-
   return (
     <RecoilRoot>
-      <GeistProvider theme={theme}>
+      <GeistProvider themeType={themeType}>
         <CssBaseline />
         <GlobalStyle />
 
