@@ -5,7 +5,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const withPWA = require("next-pwa");
 
 module.exports = withPlugins([withBundleAnalyzer, withPWA], {
-  future: { webpack5: true },
   poweredByHeader: false,
   publicRuntimeConfig: {
     // Will be available on both server and client
