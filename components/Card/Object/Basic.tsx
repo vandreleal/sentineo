@@ -50,7 +50,7 @@ const CardObjectBasic: React.FC<
         )}
       </Grid>
 
-      <Spacer y={1} />
+      <Spacer h={1} />
 
       <Grid.Container gap={mqUpSM ? 0 : 2}>
         <Grid xs={24} sm={8} md={6}>

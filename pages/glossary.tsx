@@ -38,7 +38,7 @@ const Glossary = () => {
                         {item.term}
                       </Text>
                     </Fieldset.Title>
-                    <Text p size={14}>
+                    <Text p>
                       {item.definition}
                     </Text>
                   </Fieldset.Content>
