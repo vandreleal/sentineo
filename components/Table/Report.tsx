@@ -25,7 +25,7 @@ export type TableReportProps = Props & typeof defaultProps & NativeAttrs;
 
 const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
   data,
-}) => {
+}): JSX.Element => {
   const { near_earth_objects } = data;
   const preferences = useRecoilValue(appStateDetailed);
   const router = useRouter();
@@ -60,7 +60,7 @@ const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
     return data;
   };
 
-  const renderActions = (value: any, rowData: any) => {
+  const renderActions = (_value: any, rowData: any) => {
     const { id } = rowData;
 
     return (
@@ -78,7 +78,7 @@ const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
     );
   };
 
-  const renderAttribute = (value: any, rowData: any) => {
+  const renderAttribute = (_value: any, rowData: any) => {
     return getAttribute(rowData, "is_potentially_hazardous_asteroid");
   };
 

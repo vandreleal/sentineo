@@ -23,7 +23,7 @@ export type ButtonRoundProps = Props & typeof defaultProps & NativeAttrs;
 const ButtonRound: React.FC<React.PropsWithChildren<ButtonRoundProps>> = ({
   icon,
   ...props
-}) => {
+}): JSX.Element => {
   return <StyledButton icon={icon} {...props}></StyledButton>;
 };
 

@@ -29,7 +29,7 @@ export type PageHeaderProps = Props & typeof defaultProps & NativeAttrs;
 const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
   themeType,
   switchTheme,
-}) => {
+}): JSX.Element => {
   const router = useRouter();
   const { setVisible, bindings } = useModal();
 

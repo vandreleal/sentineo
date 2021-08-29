@@ -17,7 +17,7 @@ export type TableCloseApproachProps = Props & typeof defaultProps & NativeAttrs;
 
 const TableCloseApproach: React.FC<
   React.PropsWithChildren<TableCloseApproachProps>
-> = ({ data }) => {
+> = ({ data }): JSX.Element => {
   const { close_approach_data } = data;
   const preferences = useRecoilValue(appStateDetailed);
 

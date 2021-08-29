@@ -1,4 +1,4 @@
-import { Collapse, Description, Divider, Grid, Text } from "@geist-ui/react";
+import { Collapse, Description, Grid, Text } from "@geist-ui/react";
 
 interface Props {
   data: {
@@ -12,16 +12,14 @@ interface Props {
   };
 }
 
-const defaultProps = {};
-
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
-export type CardObjectOrbitProps = Props & typeof defaultProps & NativeAttrs;
+export type CardObjectOrbitProps = Props & NativeAttrs;
 
 const CardObjectOrbit: React.FC<React.PropsWithChildren<CardObjectOrbitProps>> =
-  ({ data }) => {
+  ({ data }): JSX.Element => {
     const { orbital_data } = data;
 
-    const renderData = () => {
+    const renderData = (): JSX.Element => {
       return (
         <Collapse.Group>
           <Collapse
@@ -60,7 +58,7 @@ const CardObjectOrbit: React.FC<React.PropsWithChildren<CardObjectOrbitProps>> =
       );
     };
 
-    return <>{renderData()}</>;
+    return renderData();
   };
 
 export default CardObjectOrbit;

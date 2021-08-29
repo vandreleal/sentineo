@@ -43,7 +43,7 @@ export type CardAPODProps = Props & typeof defaultProps & NativeAttrs;
 
 const CardAPOD: React.FC<React.PropsWithChildren<CardAPODProps>> = ({
   data,
-}) => {
+}): JSX.Element => {
   return (
     <Card key={data.id}>
       <Card.Content style={{ padding: 0 }}>
