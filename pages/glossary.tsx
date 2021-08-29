@@ -1,11 +1,6 @@
 import Head from "next/head";
 import { Fieldset, Grid, Link, Text } from "@geist-ui/react";
-import styled from "styled-components";
 import glossary from "@/data/glossary.json";
-
-const StyledFieldset = styled(Fieldset)`
-  width: 100%;
-`;
 
 const Glossary = () => {
   return (
@@ -31,18 +26,16 @@ const Glossary = () => {
           {glossary.map((item: any, key: number) => {
             return (
               <Grid xs key={key}>
-                <StyledFieldset>
+                <Fieldset style={{ flexGrow: 1 }}>
                   <Fieldset.Content>
                     <Fieldset.Title>
                       <Text span type="secondary">
                         {item.term}
                       </Text>
                     </Fieldset.Title>
-                    <Text p size={14}>
-                      {item.definition}
-                    </Text>
+                    <Text p>{item.definition}</Text>
                   </Fieldset.Content>
-                </StyledFieldset>
+                </Fieldset>
               </Grid>
             );
           })}

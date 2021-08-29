@@ -29,7 +29,7 @@ export type PageHeaderProps = Props & typeof defaultProps & NativeAttrs;
 const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
   themeType,
   switchTheme,
-}) => {
+}): JSX.Element => {
   const router = useRouter();
   const { setVisible, bindings } = useModal();
 
@@ -39,7 +39,7 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
         <Grid sm>
           <Grid.Container gap={1}>
             <Grid>
-              <Image src="/telescope.svg" alt="Logo" width={56} height={56} />
+              <Image src="/telescope.svg" alt="Logo" width="56px" height="56px" />
             </Grid>
             <Grid>
               <Text

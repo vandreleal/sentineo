@@ -25,29 +25,13 @@ export type TableReportProps = Props & typeof defaultProps & NativeAttrs;
 
 const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
   data,
-}) => {
+}): JSX.Element => {
   const { near_earth_objects } = data;
   const preferences = useRecoilValue(appStateDetailed);
   const router = useRouter();
 
-  const getActions = (actions: any, rowData: any) => {
-    const { id } = rowData.rowValue;
-
-    return (
-      <ButtonGroup size="mini" ghost>
-        <Button
-          onClick={() => {
-            router.push(`/object/${id}`);
-          }}
-        >
-          Details
-        </Button>
-      </ButtonGroup>
-    );
-  };
-
   const getAttribute = (rowData: any, attribute: string) => {
-    const value = rowData.rowValue[attribute];
+    const value = rowData[attribute];
 
     return (
       <Dot type={value ? "warning" : "secondary"}>{value ? "Yes" : "No"}</Dot>
@@ -69,14 +53,33 @@ const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
     object.forEach((item: object) => {
       data.push({
         ...item,
-        hazardous: (actions: any, rowData: any) =>
-          getAttribute(rowData, "is_potentially_hazardous_asteroid"),
         prop_miss_distance: getAttributeByPref(item, "miss_distance"),
-        actions: getActions,
       });
     });
 
     return data;
+  };
+
+  const renderActions = (_value: any, rowData: any) => {
+    const { id } = rowData;
+
+    return (
+      <ButtonGroup ghost>
+        <Button
+          font={1.25}
+          scale={1 / 3}
+          onClick={() => {
+            router.push(`/object/${id}`);
+          }}
+        >
+          Details
+        </Button>
+      </ButtonGroup>
+    );
+  };
+
+  const renderAttribute = (_value: any, rowData: any) => {
+    return getAttribute(rowData, "is_potentially_hazardous_asteroid");
   };
 
   const renderReport = () => {
@@ -126,6 +129,7 @@ const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
                         prop="hazardous"
                         label="Potentially Hazardous?"
                         width={125}
+                        render={renderAttribute}
                       />
                       <Table.Column prop="name" label="Name" />
                       <Table.Column
@@ -137,7 +141,12 @@ const TableReport: React.FC<React.PropsWithChildren<TableReportProps>> = ({
                         prop="absolute_magnitude_h"
                         label="Abs Magnitude"
                       />
-                      <Table.Column prop="actions" label="" width={50} />
+                      <Table.Column
+                        prop="actions"
+                        label=""
+                        width={50}
+                        render={renderActions}
+                      />
                     </Table>
                   )}
                 </Grid>

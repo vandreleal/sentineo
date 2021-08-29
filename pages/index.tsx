@@ -25,7 +25,7 @@ function Home() {
       {loadableAPOD.state === "hasValue" && !apod.code && !apod.error && (
         <>
           <CardAPOD data={apod} />
-          <Spacer y={1} />
+          <Spacer h={1} />
         </>
       )}
 

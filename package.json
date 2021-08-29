@@ -1,7 +1,7 @@
 {
   "name": "sentineo",
   "description": "SentiNEO: Near-Earth Objects Viewer",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": true,
   "author": "Vandré Leal",
   "license": "MIT",
@@ -15,29 +15,29 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@geist-ui/react": "^2.1.5",
+    "@geist-ui/react": "^2.2.0",
     "@geist-ui/react-icons": "^1.0.1",
-    "@next/bundle-analyzer": "^11.0.1",
-    "date-fns": "^2.22.1",
-    "next": "11.0.1",
+    "@next/bundle-analyzer": "^11.1.0",
+    "date-fns": "^2.23.0",
+    "next": "11.1.0",
     "next-compose-plugins": "^2.2.1",
-    "next-pwa": "^5.2.21",
+    "next-pwa": "^5.3.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "recoil": "^0.3.1",
-    "styled-components": "^5.3.0"
+    "recoil": "^0.4.1",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
-    "@types/node": "^15.12.4",
-    "@types/react": "^17.0.11",
-    "@types/styled-components": "^5.1.10",
-    "babel-plugin-styled-components": "^1.12.0",
+    "@types/node": "^16.7.2",
+    "@types/react": "^17.0.19",
+    "@types/styled-components": "^5.1.13",
+    "babel-plugin-styled-components": "^1.13.2",
     "cz-conventional-changelog": "3.3.0",
-    "husky": "^6.0.0",
-    "prettier": "2.3.1",
+    "husky": "^7.0.2",
+    "prettier": "2.3.2",
     "pretty-quick": "^3.1.1",
-    "typescript": "^4.3.4",
-    "webpack": "^5.40.0"
+    "typescript": "^4.4.2",
+    "webpack": "^5.51.1"
   },
   "config": {
     "commitizen": {
