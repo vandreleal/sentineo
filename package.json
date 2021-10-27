@@ -17,7 +17,7 @@
   "dependencies": {
     "@geist-ui/react": "^2.2.0",
     "@geist-ui/react-icons": "^1.0.1",
-    "@next/bundle-analyzer": "^11.1.2",
+    "@next/bundle-analyzer": "^12.0.1",
     "date-fns": "^2.25.0",
     "next": "11.1.2",
     "next-compose-plugins": "^2.2.1",
