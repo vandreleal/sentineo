@@ -29,7 +29,7 @@ const PageFooter: React.FC<React.PropsWithChildren<PageFooterProps>> =
           style={{ textAlign: "center" }}
         >
           <Grid>
-            <Text span b style={{ display: "block" }}>
+            <Text span b font={0.875} style={{ display: "block" }}>
               Built by{" "}
               <Link
                 href="https://vandreleal.github.io"
@@ -40,7 +40,7 @@ const PageFooter: React.FC<React.PropsWithChildren<PageFooterProps>> =
               </Link>
             </Text>
 
-            <Text span font={0.75}>
+            <Text span font={0.625}>
               Icons made by{" "}
               <a
                 href="https://www.flaticon.com/authors/good-ware"
