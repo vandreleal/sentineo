@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.4",
-    "@types/react": "^17.0.37",
+    "@types/react": "^17.0.38",
     "@types/styled-components": "^5.1.19",
     "babel-plugin-styled-components": "^2.0.2",
     "cz-conventional-changelog": "3.3.0",
