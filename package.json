@@ -15,7 +15,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@geist-ui/react": "^2.2.0",
+    "@geist-ui/react": "^2.2.3",
     "@geist-ui/react-icons": "^1.0.1",
     "@next/bundle-analyzer": "^12.0.8",
     "date-fns": "^2.28.0",
