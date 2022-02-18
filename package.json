@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/node": "^17.0.18",
     "@types/react": "^17.0.39",
-    "@types/styled-components": "^5.1.22",
+    "@types/styled-components": "^5.1.23",
     "babel-plugin-styled-components": "^2.0.2",
     "cz-conventional-changelog": "3.3.0",
     "husky": "^7.0.4",
