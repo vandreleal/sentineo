@@ -959,10 +959,10 @@
   dependencies:
     "@babel/runtime" "^7.16.7"
 
-"@next/bundle-analyzer@^12.1.1":
-  version "12.1.1"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-12.1.1.tgz#87798e7b50cc6655fcf7df0da05f91dfd1573587"
-  integrity sha512-Mxi08C15vLCY3eAR7KEatWkNuQ7H706K/o9tw99qWz0GHl3+taVPad3kOX1xVHdE8GuaMHnbekiug4mYdV+3hQ==
+"@next/bundle-analyzer@^12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-12.1.2.tgz#53e9f3595bd25404479b7a40a85a846b328af12b"
+  integrity sha512-JRDgfEERWXFtwCjiue/SgI/33Z/Dpmt3tKazbf2BIi+uEmxOjuwaN9+TGPEX/P0QWyuhu8DYAex92+B/yB+93Q==
   dependencies:
     webpack-bundle-analyzer "4.3.0"
 
