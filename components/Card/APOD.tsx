@@ -29,7 +29,7 @@ const CustomDescription = styled(Description)`
   }
 `
 
-const CardAPOD = ({ copyright, date, explanation, hdurl, media_type, title, url }: APOD) => {
+const CardAPOD = ({ copyright, date, explanation, hdurl, media_type, title, url }: NASA.NeoWs.APOD) => {
   return (
     <Card key={title}>
       <Card.Content style={{ padding: 0 }}>
@@ -47,7 +47,7 @@ const CardAPOD = ({ copyright, date, explanation, hdurl, media_type, title, url 
           <Grid md={8} sm={12} xs={24}>
             <Description
               content={
-                <Link href="https://apod.nasa.gov" rel="noopener" target="_blank">
+                <Link href="https://apod.NASA.gov" rel="noopener" target="_blank">
                   {date}
                 </Link>
               }

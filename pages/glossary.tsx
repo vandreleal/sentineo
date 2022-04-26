@@ -13,8 +13,8 @@ const Glossary = () => {
         <Grid.Container direction="column" gap={3}>
           <Grid style={{ textAlign: 'center' }}>
             <Text h3>Glossary</Text>
-            <Link block href="https://cneos.jpl.nasa.gov/glossary" rel="noopener" target="_blank">
-              <Text small>https://cneos.jpl.nasa.gov/glossary</Text>
+            <Link block href="https://cneos.jpl.NASA.gov/glossary" rel="noopener" target="_blank">
+              <Text small>https://cneos.jpl.NASA.gov/glossary</Text>
             </Link>
           </Grid>
           {glossary.map((item: GlossaryItem, key: number) => {

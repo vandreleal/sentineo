@@ -12,7 +12,7 @@ const CardObjectBasic = ({
   is_potentially_hazardous_asteroid,
   name,
   nasa_jpl_url,
-}: NearEarthObject) => {
+}: NASA.NeoWs.NearEarthObject) => {
   const mqUpSM = useMediaQuery('sm', { match: 'up' })
   const preferences = useRecoilValue(appStateDetailed)
 
