@@ -1,28 +1,21 @@
-import Document, {
-  DocumentContext,
-  Html,
-  Head,
-  Main,
-  NextScript,
-} from "next/document";
-import { CssBaseline } from "@geist-ui/react";
-import { ServerStyleSheet } from "styled-components";
-import * as types from "styled-components/cssprop";
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
+
+import { CssBaseline } from '@geist-ui/react'
+import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const styles = CssBaseline.flush();
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+    const styles = CssBaseline.flush()
+    const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+        })
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx)
 
       return {
         ...initialProps,
@@ -33,9 +26,9 @@ class MyDocument extends Document {
             {sheet.getStyleElement()}
           </>
         ),
-      };
+      }
     } finally {
-      sheet.seal();
+      sheet.seal()
     }
   }
 
@@ -43,89 +36,49 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/icons/favicon.ico" />
-          <meta name="description" content="Near-Earth Objects Viewer" />
-          <meta name="keywords" content="NASA, NEO, APOD" />
-          <meta name="author" content="Vandré Leal" />
-          <meta name="application-name" content="Sentineo" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
-          />
-          <meta name="apple-mobile-web-app-title" content="Sentineo" />
-          <meta name="description" content="Near-Earth Objects Viewer" />
-          <meta name="format-detection" content="telephone=no" />
-          <meta name="mobile-web-app-capable" content="yes" />
-          <meta
-            name="msapplication-config"
-            content="/icons/browserconfig.xml"
-          />
-          <meta name="msapplication-TileColor" content="#555" />
-          <meta name="msapplication-tap-highlight" content="no" />
-          <meta name="theme-color" content="#000000" />
-
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/icons/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/icons/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/icons/favicon-16x16.png"
-          />
-          <link rel="manifest" href="/manifest.json" />
-          <link
-            rel="mask-icon"
-            href="/icons/safari-pinned-tab.svg"
-            color="#555"
-          />
-
+          <link href="/icons/favicon.ico" rel="icon" />
+          <meta content="Near-Earth Objects Viewer" name="description" />
+          <meta content="NASA, NEO, APOD" name="keywords" />
+          <meta content="Vandré Leal" name="author" />
+          <meta content="Sentineo" name="application-name" />
+          <meta content="yes" name="apple-mobile-web-app-capable" />
+          <meta content="default" name="apple-mobile-web-app-status-bar-style" />
+          <meta content="Sentineo" name="apple-mobile-web-app-title" />
+          <meta content="Near-Earth Objects Viewer" name="description" />
+          <meta content="telephone=no" name="format-detection" />
+          <meta content="yes" name="mobile-web-app-capable" />
+          <meta content="/icons/browserconfig.xml" name="msapplication-config" />
+          <meta content="#555" name="msapplication-TileColor" />
+          <meta content="no" name="msapplication-tap-highlight" />
+          <meta content="#000000" name="theme-color" />
+          <link href="/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+          <link href="/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+          <link href="/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+          <link href="/manifest.json" rel="manifest" />
+          <link color="#555" href="/icons/safari-pinned-tab.svg" rel="mask-icon" />
           {/* Twitter */}
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://sentineo.app" />
-          <meta name="twitter:title" content="Sentineo" />
-          <meta
-            name="twitter:description"
-            content="Near-Earth Objects Viewer"
-          />
-          <meta
-            name="twitter:image"
-            content="https://sentineo.app/icons/android-chrome-192x192.png"
-          />
-
+          <meta content="summary" name="twitter:card" />
+          <meta content="https://sentineo.app" name="twitter:url" />
+          <meta content="Sentineo" name="twitter:title" />
+          <meta content="Near-Earth Objects Viewer" name="twitter:description" />
+          <meta content="https://sentineo.app/icons/android-chrome-192x192.png" name="twitter:image" />
           {/* Open Graph */}
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Sentineo" />
-          <meta property="og:description" content="Near-Earth Objects Viewer" />
-          <meta property="og:site_name" content="Sentineo" />
-          <meta property="og:url" content="https://sentineo.app" />
-          <meta
-            property="og:image"
-            content="https://sentineo.app/icons/apple-touch-icon.png"
-          />
-
+          <meta content="website" property="og:type" />
+          <meta content="Sentineo" property="og:title" />
+          <meta content="Near-Earth Objects Viewer" property="og:description" />
+          <meta content="Sentineo" property="og:site_name" />
+          <meta content="https://sentineo.app" property="og:url" />
+          <meta content="https://sentineo.app/icons/apple-touch-icon.png" property="og:image" />
           {/* Font: Space Mono */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument
