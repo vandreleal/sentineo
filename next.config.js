@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
 const withPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -5,8 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
+const withInterceptStdout = require('next-intercept-stdout')
 
-const nextConfig = withPlugins([withBundleAnalyzer, withPWA], {
+const nextConfig = withPlugins([withBundleAnalyzer, withInterceptStdout, withPWA], {
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
