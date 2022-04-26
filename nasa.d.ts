@@ -12,8 +12,8 @@ declare namespace NASA {
     }
 
     interface CloseApproach {
-      close_approach_date: string
       close_approach_date_full: string
+      close_approach_date: string
       epoch_date_close_approach: number
       miss_distance: MissDistance
       orbiting_body: string
@@ -39,8 +39,9 @@ declare namespace NASA {
     }
 
     interface Links {
-      next: string
-      prev: string
+      near_earth_object_parent?: string
+      next?: string
+      prev?: string
       self: string
     }
 
@@ -53,8 +54,8 @@ declare namespace NASA {
 
     interface NearEarthObject {
       absolute_magnitude_h: string
-      estimated_diameter: EstimatedDiameter
       close_approach_data: CloseApproach[]
+      estimated_diameter: EstimatedDiameter
       id: string
       is_potentially_hazardous_asteroid: boolean
       is_sentry_object: boolean
@@ -105,6 +106,40 @@ declare namespace NASA {
       kilometers_per_hour: string
       kilometers_per_second: string
       miles_per_hour: string
+    }
+
+    interface Sentry {
+      absolute_magnitude: string
+      average_lunar_distance: number
+      designation: string
+      estimated_diameter: string
+      fullname: string
+      impact_probability: string
+      is_active_sentry_object: boolean
+      last_obs_jd: string
+      last_obs: string
+      links: Links
+      palermo_scale_ave: string
+      Palermo_scale_max: string
+      potential_impacts: string
+      sentryId: string
+      spkId: string
+      torino_scale: string
+      url_nasa_details: string
+      url_orbital_elements: string
+      v_infinity: string
+      year_range_max: string
+      year_range_min: string
+    }
+
+    type SentryObjects = Sentry[]
+
+    interface Stats {
+      near_earth_object_count: number
+      close_approach_count: number
+      last_updated: string
+      source: string
+      nasa_jpl_url: string
     }
   }
 }
