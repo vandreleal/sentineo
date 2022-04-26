@@ -17,7 +17,7 @@ export const appStateDetailed = selector({
     const app = get(appState)
     const { estimated_diameter, miss_distance, relative_velocity } = app
 
-    let detailedState = {
+    const detailedState = {
       estimated_diameter: {
         value: estimated_diameter,
         label: estimated_diameter,

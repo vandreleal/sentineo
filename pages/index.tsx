@@ -24,12 +24,12 @@ const Home = () => {
       {/* APOD */}
       {loadableAPOD.state === 'hasValue' && !apod.code && !apod.error && (
         <>
-          <CardAPOD data={apod} />
+          <CardAPOD {...apod} />
           <Spacer h={1} />
         </>
       )}
       {/* Feed */}
-      {loadableFeed.state === 'hasValue' && <TableReport data={feed} />}
+      {loadableFeed.state === 'hasValue' && <TableReport {...feed} />}
       {/* Loading */}
       {(loadableFeed.state === 'loading' || loadableAPOD.state === 'loading') && <Loading>Loading</Loading>}
     </>

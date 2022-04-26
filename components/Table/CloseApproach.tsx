@@ -22,23 +22,20 @@ const CloseApproachGrid = styled(Grid)`
   }
 `
 
-interface TableCloseApproachProps {
-  data: {
-    close_approach_data: any
-  }
-}
-
-const TableCloseApproach = ({ data }: TableCloseApproachProps) => {
-  const { close_approach_data } = data
+const TableCloseApproach = ({ close_approach_data }: NearEarthObject) => {
   const preferences = useRecoilValue(appStateDetailed)
 
-  const getAttributeByPref = (item, attribute) => {
+  if (!close_approach_data) {
+    return null
+  }
+
+  const getAttributeByPref = (item: CloseApproach, attribute: string) => {
     const value = item[attribute][preferences[attribute].value]
 
     return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
   }
 
-  const tableData = close_approach_data.map(item => ({
+  const tableData = close_approach_data.map((item: CloseApproach) => ({
     ...item,
     prop_miss_distance: getAttributeByPref(item, 'miss_distance'),
     prop_relative_velocity: getAttributeByPref(item, 'relative_velocity'),
@@ -54,20 +51,15 @@ const TableCloseApproach = ({ data }: TableCloseApproachProps) => {
         title={title}
       >
         <CloseApproachGrid>
-          {data && (
-            <Table data={tableData} emptyText="No close approaches">
-              <Table.Column label="Orbiting" prop="orbiting_body" width={125} />
-              <Table.Column label="Date" prop="close_approach_date_full" width={175} />
-              <Table.Column
-                label={`Miss Distance (${preferences['miss_distance'].unit})`}
-                prop={`prop_miss_distance`}
-              />
-              <Table.Column
-                label={`Relative Velocity (${preferences['relative_velocity'].unit})`}
-                prop={`prop_relative_velocity`}
-              />
-            </Table>
-          )}
+          <Table data={tableData} emptyText="No close approaches">
+            <Table.Column label="Orbiting" prop="orbiting_body" width={125} />
+            <Table.Column label="Date" prop="close_approach_date_full" width={175} />
+            <Table.Column label={`Miss Distance (${preferences['miss_distance'].unit})`} prop={`prop_miss_distance`} />
+            <Table.Column
+              label={`Relative Velocity (${preferences['relative_velocity'].unit})`}
+              prop={`prop_relative_velocity`}
+            />
+          </Table>
         </CloseApproachGrid>
       </Collapse>
     </Collapse.Group>

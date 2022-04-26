@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import glossary from '@/data/glossary.json'
+import glossary from '@/data/glossary'
 import { Fieldset, Grid, Link, Text } from '@geist-ui/react'
 
 const Glossary = () => {
@@ -17,7 +17,7 @@ const Glossary = () => {
               <Text small>https://cneos.jpl.nasa.gov/glossary</Text>
             </Link>
           </Grid>
-          {glossary.map((item: any, key: number) => {
+          {glossary.map((item: GlossaryItem, key: number) => {
             return (
               <Grid key={key} xs>
                 <Fieldset style={{ flexGrow: 1 }}>

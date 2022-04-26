@@ -21,11 +21,11 @@ const Asteroid = ({ id }) => {
       </Head>
       {loadable.state === 'hasValue' && (
         <>
-          <CardObjectBasic data={data} />
+          <CardObjectBasic {...data} />
           <Spacer h={1} />
-          <CardObjectOrbit data={data} />
+          <CardObjectOrbit {...data} />
           <Spacer h={1} />
-          <TableCloseApproach data={data} />
+          <TableCloseApproach {...data} />
         </>
       )}
       {loadable.state === 'loading' && <Loading>Loading</Loading>}

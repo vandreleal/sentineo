@@ -29,28 +29,15 @@ const CustomDescription = styled(Description)`
   }
 `
 
-interface CardAPODProps {
-  data: {
-    id: string
-    copyright: string
-    date: string
-    explanation: string
-    hdurl: string
-    media_type: string
-    title: string
-    url: string
-  }
-}
-
-const CardAPOD = ({ data }: CardAPODProps) => {
+const CardAPOD = ({ copyright, date, explanation, hdurl, media_type, title, url }: APOD) => {
   return (
-    <Card key={data.id}>
+    <Card key={title}>
       <Card.Content style={{ padding: 0 }}>
-        {data.media_type === 'video' ? (
-          <iframe allowFullScreen frameBorder="0" height="540" src={data.url} width="100%" />
+        {media_type === 'video' ? (
+          <iframe allowFullScreen frameBorder="0" height="540" src={hdurl} width="100%" />
         ) : (
-          <ImageBrowser showFullLink anchorProps={{ rel: 'noopener' }} title={data.title} url={data.hdurl}>
-            <APOD alt="Astronomy Picture of the Day" height="540px" src={data.url} width="960px" />
+          <ImageBrowser showFullLink anchorProps={{ rel: 'noopener' }} title={title} url={hdurl}>
+            <APOD alt="Astronomy Picture of the Day" height="540px" src={url} width="960px" />
           </ImageBrowser>
         )}
       </Card.Content>
@@ -61,19 +48,19 @@ const CardAPOD = ({ data }: CardAPODProps) => {
             <Description
               content={
                 <Link href="https://apod.nasa.gov" rel="noopener" target="_blank">
-                  {data.date}
+                  {date}
                 </Link>
               }
               title={'Astronomy Picture of the Day'}
             />
           </Grid>
-          {data.copyright && (
+          {copyright && (
             <Grid sm={12} xs={24}>
-              <Description content={data.copyright} title={'Copyright'} />
+              <Description content={copyright} title={'Copyright'} />
             </Grid>
           )}
           <Grid xs={24}>
-            <CustomDescription content={data.explanation} title={data.title} />
+            <CustomDescription content={explanation} title={title} />
           </Grid>
         </Grid.Container>
       </Card.Content>

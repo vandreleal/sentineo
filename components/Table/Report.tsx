@@ -24,33 +24,26 @@ const ReportGrid = styled(Grid)`
   }
 `
 
-interface TableReportProps {
-  data: {
-    near_earth_objects: object
-  }
-}
-
-const TableReport = ({ data }: TableReportProps) => {
-  const { near_earth_objects } = data
+const TableReport = ({ near_earth_objects }: NearEarthObjects) => {
   const preferences = useRecoilValue(appStateDetailed)
   const router = useRouter()
 
-  const getAttribute = (rowData, attribute) => {
+  const getAttribute = (rowData: NearEarthObjects, attribute: string) => {
     const value = rowData[attribute]
 
     return <Dot type={value ? 'warning' : 'secondary'}>{value ? 'Yes' : 'No'}</Dot>
   }
 
-  const getAttributeByPref = (item, attribute) => {
+  const getAttributeByPref = (item: NearEarthObjects, attribute: string) => {
     const value = item.close_approach_data[0][attribute][preferences[attribute].value]
 
     return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
   }
 
-  const getReportData = object => {
+  const getReportData = (object: NearEarthObjects[]) => {
     const data = []
 
-    object.forEach((item: object) => {
+    object.forEach((item: NearEarthObjects) => {
       data.push({
         ...item,
         prop_miss_distance: getAttributeByPref(item, 'miss_distance'),
@@ -60,7 +53,7 @@ const TableReport = ({ data }: TableReportProps) => {
     return data
   }
 
-  const renderActions = (_value, rowData) => {
+  const renderActions = (_value: undefined, rowData: NearEarthObjects) => {
     const { id } = rowData
 
     return (
@@ -78,7 +71,7 @@ const TableReport = ({ data }: TableReportProps) => {
     )
   }
 
-  const renderAttribute = (_value, rowData) => {
+  const renderAttribute = (_value: undefined, rowData: NearEarthObjects) => {
     return getAttribute(rowData, 'is_potentially_hazardous_asteroid')
   }
 
