@@ -1,4 +1,4 @@
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 
 import { CssBaseline } from '@geist-ui/react'
 import { ServerStyleSheet } from 'styled-components'
@@ -26,7 +26,7 @@ class MyDocument extends Document {
             {sheet.getStyleElement()}
           </>
         ),
-      }
+      } as unknown as DocumentInitialProps
     } finally {
       sheet.seal()
     }
