@@ -1,6 +1,7 @@
-import Head from "next/head";
-import { Fieldset, Grid, Link, Text } from "@geist-ui/react";
-import glossary from "@/data/glossary.json";
+import Head from 'next/head'
+
+import glossary from '@/data/glossary.json'
+import { Fieldset, Grid, Link, Text } from '@geist-ui/react'
 
 const Glossary = () => {
   return (
@@ -9,16 +10,11 @@ const Glossary = () => {
         <title>SentiNEO | Glossary</title>
       </Head>
 
-      <Grid style={{ maxWidth: 600, margin: "0 auto" }}>
+      <Grid style={{ maxWidth: 600, margin: '0 auto' }}>
         <Grid.Container gap={3} direction="column">
-          <Grid style={{ textAlign: "center" }}>
+          <Grid style={{ textAlign: 'center' }}>
             <Text h3>Glossary</Text>
-            <Link
-              block
-              href="https://cneos.jpl.nasa.gov/glossary"
-              rel="noopener"
-              target="_blank"
-            >
+            <Link block href="https://cneos.jpl.nasa.gov/glossary" rel="noopener" target="_blank">
               <Text small>https://cneos.jpl.nasa.gov/glossary</Text>
             </Link>
           </Grid>
@@ -37,12 +33,12 @@ const Glossary = () => {
                   </Fieldset.Content>
                 </Fieldset>
               </Grid>
-            );
+            )
           })}
         </Grid.Container>
       </Grid>
     </>
-  );
-};
+  )
+}
 
-export default Glossary;
+export default Glossary

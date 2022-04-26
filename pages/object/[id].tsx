@@ -1,18 +1,17 @@
-import dynamic from "next/dynamic";
-import Head from "next/head";
-import { useRecoilValueLoadable } from "recoil";
-import { queryNeoAsteroid } from "@/recoil/neo";
-import { Loading, Spacer } from "@geist-ui/react";
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
-const CardObjectBasic = dynamic(() => import("@/components/Card/Object/Basic"));
-const CardObjectOrbit = dynamic(() => import("@/components/Card/Object/Orbit"));
-const TableCloseApproach = dynamic(
-  () => import("@/components/Table/CloseApproach")
-);
+import { queryNeoAsteroid } from '@/recoil/neo'
+import { Loading, Spacer } from '@geist-ui/react'
+import { useRecoilValueLoadable } from 'recoil'
+
+const CardObjectBasic = dynamic(() => import('@/components/Card/Object/Basic'))
+const CardObjectOrbit = dynamic(() => import('@/components/Card/Object/Orbit'))
+const TableCloseApproach = dynamic(() => import('@/components/Table/CloseApproach'))
 
 const Asteroid = ({ id }) => {
-  const loadable = useRecoilValueLoadable(queryNeoAsteroid(id));
-  const data = loadable.contents;
+  const loadable = useRecoilValueLoadable(queryNeoAsteroid(id))
+  const data = loadable.contents
 
   return (
     <>
@@ -20,7 +19,7 @@ const Asteroid = ({ id }) => {
         <title>SentiNEO | {data.name}</title>
       </Head>
 
-      {loadable.state === "hasValue" && (
+      {loadable.state === 'hasValue' && (
         <>
           <CardObjectBasic data={data} />
           <Spacer h={1} />
@@ -30,13 +29,13 @@ const Asteroid = ({ id }) => {
         </>
       )}
 
-      {loadable.state === "loading" && <Loading>Loading</Loading>}
+      {loadable.state === 'loading' && <Loading>Loading</Loading>}
     </>
-  );
-};
+  )
+}
 
 Asteroid.getInitialProps = async (ctx: any) => {
-  return { ...ctx.query };
-};
+  return { ...ctx.query }
+}
 
-export default Asteroid;
+export default Asteroid

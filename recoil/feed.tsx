@@ -1,50 +1,49 @@
-import getConfig from "next/config";
-import { atom, selector } from "recoil";
-import { format, startOfDay, endOfDay, subDays } from "date-fns";
+import getConfig from 'next/config'
+
+import { endOfDay, format, startOfDay, subDays } from 'date-fns'
+import { atom, selector } from 'recoil'
 
 // Get HOST and API_KEY environment variables
 const {
   publicRuntimeConfig: { HOST, API_KEY },
-} = getConfig();
+} = getConfig()
 
 // Today
-const today = new Date();
+const today = new Date()
 
 // Query State
 export const queryState = atom({
-  key: "QueryState",
+  key: 'QueryState',
   default: {
     startDate: startOfDay(today),
     endDate: endOfDay(today),
   },
-});
+})
 
 // Get a list of Near Earth Objects within a date range, The max range in one query is 7 days
 export const queryFeedParameters = selector({
-  key: "QueryFeedParameters",
+  key: 'QueryFeedParameters',
   get: async ({ get }) => {
-    const { startDate, endDate } = get(queryState);
+    const { startDate, endDate } = get(queryState)
 
     // Format Dates
-    const start = format(subDays(startDate, 0), "yyyy-MM-dd");
-    const end = format(endDate, "yyyy-MM-dd");
+    const start = format(subDays(startDate, 0), 'yyyy-MM-dd')
+    const end = format(endDate, 'yyyy-MM-dd')
 
     const response = await fetch(
-      `${HOST}/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=false&api_key=${API_KEY}`
-    );
+      `${HOST}/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=false&api_key=${API_KEY}`,
+    )
 
-    return response.json();
+    return response.json()
   },
-});
+})
 
 // Get a list of Near Earth Objects for today
 export const queryFeedToday = selector({
-  key: "QueryFeedToday",
+  key: 'QueryFeedToday',
   get: async () => {
-    const response = await fetch(
-      `${HOST}/neo/rest/v1/feed/today?detailed=false&api_key=${API_KEY}`
-    );
+    const response = await fetch(`${HOST}/neo/rest/v1/feed/today?detailed=false&api_key=${API_KEY}`)
 
-    return response.json();
+    return response.json()
   },
-});
+})

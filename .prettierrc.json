@@ -1,1 +1,12 @@
-{}
+{
+  "arrowParens": "avoid",
+  "importOrder": ["^(?!next-app-core$)(react|next(.*))$", "<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrderCaseInsensitive": true,
+  "importOrderParserPlugins": ["classProperties", "decorators-legacy", "jsx", "typescript"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all"
+}

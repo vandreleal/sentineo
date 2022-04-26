@@ -1,44 +1,38 @@
-import { useRecoilValue } from "recoil";
-import { appStateDetailed } from "@/recoil/app";
-import { Collapse, Grid, Loading, Table } from "@geist-ui/react";
+import { appStateDetailed } from '@/recoil/app'
+import { Collapse, Grid, Loading, Table } from '@geist-ui/react'
+import { useRecoilValue } from 'recoil'
 
 interface Props {
   data: {
-    close_approach_data: object;
-  };
+    close_approach_data: object
+  }
 }
 
 const defaultProps = {
   data: null,
-};
+}
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
-export type TableCloseApproachProps = Props & typeof defaultProps & NativeAttrs;
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type TableCloseApproachProps = Props & typeof defaultProps & NativeAttrs
 
-const TableCloseApproach: React.FC<
-  React.PropsWithChildren<TableCloseApproachProps>
-> = ({ data }): JSX.Element => {
-  const { close_approach_data } = data;
-  const preferences = useRecoilValue(appStateDetailed);
+const TableCloseApproach: React.FC<React.PropsWithChildren<TableCloseApproachProps>> = ({ data }): JSX.Element => {
+  const { close_approach_data } = data
+  const preferences = useRecoilValue(appStateDetailed)
 
   const getAttributeByPref = (item: any, attribute: string) => {
-    const value = item[attribute][preferences[attribute].value];
+    const value = item[attribute][preferences[attribute].value]
 
-    return `${new Intl.NumberFormat().format(value)} ${
-      preferences[attribute].unit
-    }`;
-  };
+    return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
+  }
 
   const tableData = close_approach_data.map((item: any) => ({
     ...item,
-    prop_miss_distance: getAttributeByPref(item, "miss_distance"),
-    prop_relative_velocity: getAttributeByPref(item, "relative_velocity"),
-  }));
+    prop_miss_distance: getAttributeByPref(item, 'miss_distance'),
+    prop_relative_velocity: getAttributeByPref(item, 'relative_velocity'),
+  }))
 
   const renderData = () => {
-    const title = `${close_approach_data.length} close approach${
-      close_approach_data.length > 1 ? "es" : ""
-    }`;
+    const title = `${close_approach_data.length} close approach${close_approach_data.length > 1 ? 'es' : ''}`
 
     return (
       <Collapse.Group>
@@ -51,8 +45,7 @@ const TableCloseApproach: React.FC<
           <Grid
             css={`
               overflow: auto;
-              max-height: ${(props: any) =>
-                props.children.props.data.length > 20 && "600px"};
+              max-height: ${(props: any) => props.children.props.data.length > 20 && '600px'};
 
               table {
                 td,
@@ -71,33 +64,25 @@ const TableCloseApproach: React.FC<
           >
             {data && (
               <Table data={tableData} emptyText="No close approaches">
-                <Table.Column
-                  prop="orbiting_body"
-                  label="Orbiting"
-                  width={125}
-                />
-                <Table.Column
-                  prop="close_approach_date_full"
-                  label="Date"
-                  width={175}
-                />
+                <Table.Column prop="orbiting_body" label="Orbiting" width={125} />
+                <Table.Column prop="close_approach_date_full" label="Date" width={175} />
                 <Table.Column
                   prop={`prop_miss_distance`}
-                  label={`Miss Distance (${preferences["miss_distance"].unit})`}
+                  label={`Miss Distance (${preferences['miss_distance'].unit})`}
                 />
                 <Table.Column
                   prop={`prop_relative_velocity`}
-                  label={`Relative Velocity (${preferences["relative_velocity"].unit})`}
+                  label={`Relative Velocity (${preferences['relative_velocity'].unit})`}
                 />
               </Table>
             )}
           </Grid>
         </Collapse>
       </Collapse.Group>
-    );
-  };
+    )
+  }
 
-  return <>{renderData()}</>;
-};
+  return <>{renderData()}</>
+}
 
-export default TableCloseApproach;
+export default TableCloseApproach

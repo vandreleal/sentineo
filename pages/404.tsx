@@ -1,6 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Grid, Text } from "@geist-ui/react";
+import Head from 'next/head'
+import Image from 'next/image'
+
+import { Grid, Text } from '@geist-ui/react'
 
 const Custom404 = () => {
   return (
@@ -9,13 +10,7 @@ const Custom404 = () => {
         <title>SentiNEO | 404</title>
       </Head>
 
-      <Grid.Container
-        gap={3}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ textAlign: "center" }}
-      >
+      <Grid.Container gap={3} direction="column" alignItems="center" justify="center" style={{ textAlign: 'center' }}>
         <Grid>
           <Image
             src="/spaceship.svg"
@@ -35,7 +30,7 @@ const Custom404 = () => {
         </Grid>
       </Grid.Container>
     </>
-  );
-};
+  )
+}
 
-export default Custom404;
+export default Custom404
