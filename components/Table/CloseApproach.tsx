@@ -22,20 +22,20 @@ const CloseApproachGrid = styled(Grid)`
   }
 `
 
-const TableCloseApproach = ({ close_approach_data }: NearEarthObject) => {
+const TableCloseApproach = ({ close_approach_data }: NASA.NeoWs.NearEarthObject) => {
   const preferences = useRecoilValue(appStateDetailed)
 
   if (!close_approach_data) {
     return null
   }
 
-  const getAttributeByPref = (item: CloseApproach, attribute: string) => {
+  const getAttributeByPref = (item: NASA.NeoWs.CloseApproach, attribute: string) => {
     const value = item[attribute][preferences[attribute].value]
 
     return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
   }
 
-  const tableData = close_approach_data.map((item: CloseApproach) => ({
+  const tableData = close_approach_data.map((item: NASA.NeoWs.CloseApproach) => ({
     ...item,
     prop_miss_distance: getAttributeByPref(item, 'miss_distance'),
     prop_relative_velocity: getAttributeByPref(item, 'relative_velocity'),

@@ -1,6 +1,6 @@
 import { Collapse, Description, Grid, Text } from '@geist-ui/react'
 
-const CardObjectOrbit = ({ orbital_data }: NearEarthObject) => {
+const CardObjectOrbit = ({ orbital_data }: NASA.NeoWs.NearEarthObject) => {
   if (!orbital_data) {
     return null
   }

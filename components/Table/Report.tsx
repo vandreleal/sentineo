@@ -24,26 +24,26 @@ const ReportGrid = styled(Grid)`
   }
 `
 
-const TableReport = ({ near_earth_objects }: NearEarthObjects) => {
+const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
   const preferences = useRecoilValue(appStateDetailed)
   const router = useRouter()
 
-  const getAttribute = (rowData: NearEarthObjects, attribute: string) => {
+  const getAttribute = (rowData: NASA.NeoWs.NearEarthObjects, attribute: string) => {
     const value = rowData[attribute]
 
     return <Dot type={value ? 'warning' : 'secondary'}>{value ? 'Yes' : 'No'}</Dot>
   }
 
-  const getAttributeByPref = (item: NearEarthObjects, attribute: string) => {
+  const getAttributeByPref = (item: NASA.NeoWs.NearEarthObjects, attribute: string) => {
     const value = item.close_approach_data[0][attribute][preferences[attribute].value]
 
     return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
   }
 
-  const getReportData = (object: NearEarthObjects[]) => {
+  const getReportData = (object: NASA.NeoWs.NearEarthObjects[]) => {
     const data = []
 
-    object.forEach((item: NearEarthObjects) => {
+    object.forEach((item: NASA.NeoWs.NearEarthObjects) => {
       data.push({
         ...item,
         prop_miss_distance: getAttributeByPref(item, 'miss_distance'),
@@ -53,7 +53,7 @@ const TableReport = ({ near_earth_objects }: NearEarthObjects) => {
     return data
   }
 
-  const renderActions = (_value: undefined, rowData: NearEarthObjects) => {
+  const renderActions = (_value: undefined, rowData: NASA.NeoWs.NearEarthObjects) => {
     const { id } = rowData
 
     return (
@@ -71,7 +71,7 @@ const TableReport = ({ near_earth_objects }: NearEarthObjects) => {
     )
   }
 
-  const renderAttribute = (_value: undefined, rowData: NearEarthObjects) => {
+  const renderAttribute = (_value: undefined, rowData: NASA.NeoWs.NearEarthObjects) => {
     return getAttribute(rowData, 'is_potentially_hazardous_asteroid')
   }
 
