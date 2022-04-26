@@ -2,49 +2,36 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
 import { Grid, Image, Page, Text, Tooltip, useModal } from '@geist-ui/react'
-// Icons
-import Book from '@geist-ui/react-icons/book'
-import Moon from '@geist-ui/react-icons/moon'
-import Settings from '@geist-ui/react-icons/settings'
-import Sun from '@geist-ui/react-icons/sun'
+import { Book, Moon, Settings, Sun } from '@geist-ui/react-icons'
 import { format } from 'date-fns'
 
-// Custom Components
 const ButtonRound = dynamic(() => import('@/components/Button/Round'))
 const ModalSettings = dynamic(() => import('@/components/Modal/Settings'))
 
-interface Props {
+interface PageHeaderProps {
   themeType: string
-  switchTheme: any
+  switchTheme?: VoidFunction
 }
 
-const defaultProps = {
-  themeType: 'dark',
-  switchTheme: null,
-}
-
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PageHeaderProps = Props & typeof defaultProps & NativeAttrs
-
-const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({ themeType, switchTheme }): JSX.Element => {
+const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
   const router = useRouter()
   const { setVisible, bindings } = useModal()
 
   return (
     <Page.Header center>
-      <Grid.Container gap={1} alignItems="center" justify="space-between">
+      <Grid.Container alignItems="center" gap={1} justify="space-between">
         <Grid sm>
           <Grid.Container gap={1}>
             <Grid>
-              <Image src="/telescope.svg" alt="Logo" width="56px" height="56px" />
+              <Image alt="Logo" height="56px" src="/telescope.svg" width="56px" />
             </Grid>
             <Grid>
               <Text
                 h4
+                style={{ margin: '4px 0 0', cursor: 'pointer' }}
                 onClick={() => {
                   router.push('/')
                 }}
-                style={{ margin: '4px 0 0', cursor: 'pointer' }}
               >
                 SentiNEO
               </Text>
@@ -54,11 +41,10 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({ themeT
             </Grid>
           </Grid.Container>
         </Grid>
-
         <Grid style={{ width: 160 }}>
-          <Grid.Container gap={1} alignItems="center">
+          <Grid.Container alignItems="center" gap={1}>
             <Grid>
-              <Tooltip text={'Glossary'} placement="bottom">
+              <Tooltip placement="bottom" text={'Glossary'}>
                 <ButtonRound
                   aria-label="Glossary"
                   icon={<Book />}
@@ -69,7 +55,7 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({ themeT
               </Tooltip>
             </Grid>
             <Grid>
-              <Tooltip text={'Theme'} placement="bottom">
+              <Tooltip placement="bottom" text={'Theme'}>
                 <ButtonRound
                   aria-label="Theme"
                   icon={themeType === 'dark' ? <Moon /> : <Sun />}
@@ -78,13 +64,12 @@ const PageHeader: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({ themeT
               </Tooltip>
             </Grid>
             <Grid>
-              <Tooltip text={'Settings'} placement="bottom">
+              <Tooltip placement="bottom" text={'Settings'}>
                 <ButtonRound aria-label="Settings" icon={<Settings />} onClick={() => setVisible(true)} />
               </Tooltip>
             </Grid>
           </Grid.Container>
-
-          <ModalSettings setVisible={setVisible} bindings={bindings} />
+          <ModalSettings bindings={bindings} setVisible={setVisible} />
         </Grid>
       </Grid.Container>
     </Page.Header>

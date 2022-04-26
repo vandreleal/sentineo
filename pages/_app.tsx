@@ -7,11 +7,10 @@ import { CssBaseline, GeistProvider, Page } from '@geist-ui/react'
 import { RecoilRoot } from 'recoil'
 import GlobalStyle from 'styles/global'
 
-// Custom Components
 const PageHeader = dynamic(() => import('@/components/Page/Header'))
 const PageFooter = dynamic(() => import('@/components/Page/Footer'))
 
-function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   const [themeType, setThemeType] = useState('dark')
 
   const switchTheme = () => {
@@ -23,14 +22,12 @@ function App({ Component, pageProps }: AppProps) {
       <GeistProvider themeType={themeType}>
         <CssBaseline />
         <GlobalStyle />
-
         <Head>
           <meta
-            name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+            name="viewport"
           />
         </Head>
-
         <Page
           dotBackdrop={true}
           style={{
@@ -40,12 +37,10 @@ function App({ Component, pageProps }: AppProps) {
             paddingTop: '1rem',
           }}
         >
-          <PageHeader themeType={themeType} switchTheme={switchTheme} />
-
+          <PageHeader switchTheme={switchTheme} themeType={themeType} />
           <Page.Content>
             <Component {...pageProps} />
           </Page.Content>
-
           <PageFooter />
         </Page>
       </GeistProvider>

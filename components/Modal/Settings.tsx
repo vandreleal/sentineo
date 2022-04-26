@@ -1,5 +1,8 @@
+import { Dispatch, SetStateAction } from 'react'
+
 import { appState } from '@/recoil/app'
 import { Grid, Modal, Radio, Text } from '@geist-ui/react'
+import { ModalHooksBindings } from '@geist-ui/react/esm/use-modal'
 import { useRecoilState } from 'recoil'
 import styled from 'styled-components'
 
@@ -17,26 +20,20 @@ const options = {
   relative_velocity: ['kilometers_per_second', 'kilometers_per_hour', 'miles_per_hour'],
 }
 
-interface Props {
-  setVisible: any
-  bindings: any
+interface ModalSettingsProps {
+  setVisible: Dispatch<SetStateAction<boolean>>
+  bindings: ModalHooksBindings
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ModalSettingsProps = Props & NativeAttrs
-
-const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
-  setVisible,
-  bindings,
-}): JSX.Element => {
+const ModalSettings = ({ setVisible, bindings }: ModalSettingsProps) => {
   const [preferences, setPreferences] = useRecoilState(appState)
 
   const onSelectChange = (val: string, key: string) => {
     setPreferences(prevState => ({ ...prevState, [key]: val }))
   }
 
-  const renderOptions = (options: any) => {
-    return options.map((item: any) => (
+  const renderOptions = options => {
+    return options.map((item: string) => (
       <Radio key={item.toString()} value={item}>
         {item.replace(/_/g, ' ')}
       </Radio>
@@ -47,10 +44,9 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
     preferences && (
       <Modal width="320px" {...bindings}>
         <Modal.Content style={{ paddingTop: 0 }}>
-          <Grid.Container gap={2} alignItems="center" alignContent="center" justify="center">
-            <Grid xs={24} direction="column">
+          <Grid.Container alignContent="center" alignItems="center" gap={2} justify="center">
+            <Grid direction="column" xs={24}>
               <Label>Estimated Diameter</Label>
-
               <Radio.Group
                 key="estimated_diameter"
                 value={preferences.estimated_diameter}
@@ -59,10 +55,8 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
                 {renderOptions(options.estimated_diameter)}
               </Radio.Group>
             </Grid>
-
-            <Grid xs={24} direction="column">
+            <Grid direction="column" xs={24}>
               <Label>Miss Distance</Label>
-
               <Radio.Group
                 key="miss_distance"
                 value={preferences.miss_distance}
@@ -71,10 +65,8 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
                 {renderOptions(options.miss_distance)}
               </Radio.Group>
             </Grid>
-
-            <Grid xs={24} direction="column">
+            <Grid direction="column" xs={24}>
               <Label>Relative Velocity</Label>
-
               <Radio.Group
                 key="relative_velocity"
                 value={preferences.relative_velocity}
@@ -85,7 +77,6 @@ const ModalSettings: React.FC<React.PropsWithChildren<ModalSettingsProps>> = ({
             </Grid>
           </Grid.Container>
         </Modal.Content>
-
         <Modal.Action onClick={() => setVisible(false)}>
           <Text>OK</Text>
         </Modal.Action>

@@ -23,7 +23,13 @@ const APOD = styled(Image)`
   }
 `
 
-interface Props {
+const CustomDescription = styled(Description)`
+  dd {
+    line-height: 1.15rem !important;
+  }
+`
+
+interface CardAPODProps {
   data: {
     id: string
     copyright: string
@@ -36,55 +42,38 @@ interface Props {
   }
 }
 
-const defaultProps = {}
-
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CardAPODProps = Props & typeof defaultProps & NativeAttrs
-
-const CardAPOD: React.FC<React.PropsWithChildren<CardAPODProps>> = ({ data }): JSX.Element => {
+const CardAPOD = ({ data }: CardAPODProps) => {
   return (
     <Card key={data.id}>
       <Card.Content style={{ padding: 0 }}>
         {data.media_type === 'video' ? (
-          <iframe width="100%" height="540" src={data.url} frameBorder="0" allowFullScreen></iframe>
+          <iframe allowFullScreen frameBorder="0" height="540" src={data.url} width="100%" />
         ) : (
-          <ImageBrowser title={data.title} url={data.hdurl} showFullLink anchorProps={{ rel: 'noopener' }}>
-            <APOD src={data.url} alt="Astronomy Picture of the Day" width="960px" height="540px" />
+          <ImageBrowser showFullLink anchorProps={{ rel: 'noopener' }} title={data.title} url={data.hdurl}>
+            <APOD alt="Astronomy Picture of the Day" height="540px" src={data.url} width="960px" />
           </ImageBrowser>
         )}
       </Card.Content>
-
       <Divider h={0} />
-
       <Card.Content>
         <Grid.Container gap={3}>
-          <Grid xs={24} sm={12} md={8}>
+          <Grid md={8} sm={12} xs={24}>
             <Description
-              title={'Astronomy Picture of the Day'}
               content={
                 <Link href="https://apod.nasa.gov" rel="noopener" target="_blank">
                   {data.date}
                 </Link>
               }
+              title={'Astronomy Picture of the Day'}
             />
           </Grid>
-
           {data.copyright && (
-            <Grid xs={24} sm={12}>
-              <Description title={'Copyright'} content={data.copyright} />
+            <Grid sm={12} xs={24}>
+              <Description content={data.copyright} title={'Copyright'} />
             </Grid>
           )}
-
           <Grid xs={24}>
-            <Description
-              title={data.title}
-              content={data.explanation}
-              css={`
-                dd {
-                  line-height: 1.15rem !important;
-                }
-              `}
-            />
+            <CustomDescription content={data.explanation} title={data.title} />
           </Grid>
         </Grid.Container>
       </Card.Content>

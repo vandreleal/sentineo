@@ -9,19 +9,17 @@ const Glossary = () => {
       <Head>
         <title>SentiNEO | Glossary</title>
       </Head>
-
       <Grid style={{ maxWidth: 600, margin: '0 auto' }}>
-        <Grid.Container gap={3} direction="column">
+        <Grid.Container direction="column" gap={3}>
           <Grid style={{ textAlign: 'center' }}>
             <Text h3>Glossary</Text>
             <Link block href="https://cneos.jpl.nasa.gov/glossary" rel="noopener" target="_blank">
               <Text small>https://cneos.jpl.nasa.gov/glossary</Text>
             </Link>
           </Grid>
-
           {glossary.map((item: any, key: number) => {
             return (
-              <Grid xs key={key}>
+              <Grid key={key} xs>
                 <Fieldset style={{ flexGrow: 1 }}>
                   <Fieldset.Content>
                     <Fieldset.Title>

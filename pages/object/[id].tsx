@@ -1,3 +1,4 @@
+import { NextPageContext } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
@@ -18,7 +19,6 @@ const Asteroid = ({ id }) => {
       <Head>
         <title>SentiNEO | {data.name}</title>
       </Head>
-
       {loadable.state === 'hasValue' && (
         <>
           <CardObjectBasic data={data} />
@@ -28,13 +28,12 @@ const Asteroid = ({ id }) => {
           <TableCloseApproach data={data} />
         </>
       )}
-
       {loadable.state === 'loading' && <Loading>Loading</Loading>}
     </>
   )
 }
 
-Asteroid.getInitialProps = async (ctx: any) => {
+Asteroid.getInitialProps = async (ctx: NextPageContext) => {
   return { ...ctx.query }
 }
 

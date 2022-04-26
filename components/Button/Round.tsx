@@ -1,3 +1,5 @@
+import { FC, HTMLAttributes, ReactNode } from 'react'
+
 import { Button } from '@geist-ui/react'
 import styled from 'styled-components'
 
@@ -10,18 +12,14 @@ const StyledButton = styled(Button)`
 `
 
 interface Props {
-  icon: JSX.Element
+  icon: ReactNode
 }
 
-const defaultProps = {
-  icon: null,
-}
+type NativeAttrs = Omit<HTMLAttributes<HTMLButtonElement>, keyof Props>
+type ButtonRoundProps = Props & NativeAttrs
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ButtonRoundProps = Props & typeof defaultProps & NativeAttrs
-
-const ButtonRound: React.FC<React.PropsWithChildren<ButtonRoundProps>> = ({ icon, ...props }): JSX.Element => {
-  return <StyledButton icon={icon} {...props}></StyledButton>
+const ButtonRound = ({ icon, ...props }: ButtonRoundProps) => {
+  return <StyledButton icon={icon} {...props} />
 }
 
 export default ButtonRound

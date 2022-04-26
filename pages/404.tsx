@@ -2,6 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import { Grid, Text } from '@geist-ui/react'
+import styled from 'styled-components'
+
+const Logo = styled(Image)`
+  transform: rotate(60deg);
+`
 
 const Custom404 = () => {
   return (
@@ -9,18 +14,9 @@ const Custom404 = () => {
       <Head>
         <title>SentiNEO | 404</title>
       </Head>
-
-      <Grid.Container gap={3} direction="column" alignItems="center" justify="center" style={{ textAlign: 'center' }}>
+      <Grid.Container alignItems="center" direction="column" gap={3} justify="center" style={{ textAlign: 'center' }}>
         <Grid>
-          <Image
-            src="/spaceship.svg"
-            alt="404"
-            width="fill"
-            height="fill"
-            css={`
-              transform: rotate(60deg);
-            `}
-          />
+          <Logo alt="404" height="fill" src="/spaceship.svg" width="fill" />
         </Grid>
         <Grid>
           <Text h4>Station not found </Text>

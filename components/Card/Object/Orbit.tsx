@@ -1,6 +1,6 @@
 import { Collapse, Description, Grid, Text } from '@geist-ui/react'
 
-interface Props {
+interface CardObjectOrbitProps {
   data: {
     orbital_data: {
       orbit_class: {
@@ -12,17 +12,15 @@ interface Props {
   }
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CardObjectOrbitProps = Props & NativeAttrs
-
-const CardObjectOrbit: React.FC<React.PropsWithChildren<CardObjectOrbitProps>> = ({ data }): JSX.Element => {
+const CardObjectOrbit = ({ data }: CardObjectOrbitProps) => {
   const { orbital_data } = data
 
   const renderData = (): JSX.Element => {
     return (
       <Collapse.Group>
         <Collapse
-          title={`Orbit Type: ${orbital_data.orbit_class.orbit_class_type}`}
+          initialVisible
+          shadow
           subtitle={
             <>
               <Text span type="secondary">
@@ -33,18 +31,17 @@ const CardObjectOrbit: React.FC<React.PropsWithChildren<CardObjectOrbitProps>> =
               </Text>
             </>
           }
-          initialVisible
-          shadow
+          title={`Orbit Type: ${orbital_data.orbit_class.orbit_class_type}`}
         >
-          <Grid.Container gap={3} alignContent="center" alignItems="center">
+          <Grid.Container alignContent="center" alignItems="center" gap={3}>
             {Object.keys(orbital_data).map(key => {
               if (typeof orbital_data[key] === 'object') {
                 return
               }
 
               return (
-                <Grid key={key} xs={24} sm={12} md={6}>
-                  <Description title={key.replace(/_/g, ' ')} content={orbital_data[key]} />
+                <Grid key={key} md={6} sm={12} xs={24}>
+                  <Description content={orbital_data[key]} title={key.replace(/_/g, ' ')} />
                 </Grid>
               )
             })}

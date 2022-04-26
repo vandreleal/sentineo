@@ -9,7 +9,7 @@ import { useRecoilValueLoadable } from 'recoil'
 const CardAPOD = dynamic(() => import('@/components/Card/APOD'))
 const TableReport = dynamic(() => import('@/components/Table/Report'))
 
-function Home() {
+const Home = () => {
   const loadableAPOD = useRecoilValueLoadable(queryAPOD)
   const loadableFeed = useRecoilValueLoadable(queryFeedParameters)
 
@@ -21,7 +21,6 @@ function Home() {
       <Head>
         <title>SentiNEO</title>
       </Head>
-
       {/* APOD */}
       {loadableAPOD.state === 'hasValue' && !apod.code && !apod.error && (
         <>
@@ -29,10 +28,8 @@ function Home() {
           <Spacer h={1} />
         </>
       )}
-
       {/* Feed */}
       {loadableFeed.state === 'hasValue' && <TableReport data={feed} />}
-
       {/* Loading */}
       {(loadableFeed.state === 'loading' || loadableAPOD.state === 'loading') && <Loading>Loading</Loading>}
     </>
