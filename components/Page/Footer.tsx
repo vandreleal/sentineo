@@ -6,7 +6,7 @@ const PageFooter = () => {
     <Page.Footer
       style={{
         position: 'initial',
-        padding: '2rem 0',
+        padding: '1rem 0',
       }}
     >
       <Grid.Container
@@ -20,7 +20,7 @@ const PageFooter = () => {
         <Grid>
           <Text b span font={0.875} style={{ display: 'block' }}>
             <Link href="https://github.com/vandreleal/sentineo" rel="noopener" target="_blank">
-              GitHub version {packageData.version}
+              Version {packageData.version}
             </Link>
           </Text>
           <Text span font={0.625}>

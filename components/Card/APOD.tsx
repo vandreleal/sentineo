@@ -10,22 +10,15 @@ const ImageBrowser = styled(Image.Browser)`
 `
 
 const APOD = styled(Image)`
-  filter: grayscale(100%);
-  transition: all ease-in 1s;
-
   img {
-    max-height: 540px;
+    max-height: min(540px, 25vh);
     object-fit: cover !important;
-  }
-
-  &:hover {
-    filter: grayscale(0%);
   }
 `
 
 const CustomDescription = styled(Description)`
   dd {
-    line-height: 1.15rem !important;
+    line-height: 1.25rem !important;
   }
 `
 
@@ -37,7 +30,7 @@ const CardAPOD = ({ copyright, date, explanation, hdurl, media_type, title, url 
           <iframe allowFullScreen frameBorder="0" height="540" src={hdurl} width="100%" />
         ) : (
           <ImageBrowser showFullLink anchorProps={{ rel: 'noopener' }} title={title} url={hdurl}>
-            <APOD alt="Astronomy Picture of the Day" height="540px" src={url} width="960px" />
+            <APOD alt="Astronomy Picture of the Day" height="auto" src={url} width="960px" />
           </ImageBrowser>
         )}
       </Card.Content>

@@ -47,14 +47,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .card,
-  .fieldset {
-    background-color: transparent !important;
+  .fieldset,
+  .collapse-group {
+    backdrop-filter: blur(25px);
+    background-color: hsl(0 0% 50% / 10%) !important;
   }
 
-  .collapse {
-    &-group {
-      padding: 0 !important;
-    }
+  .collapse-group {
+    padding: 0 !important;
   }
 
   .dot {
