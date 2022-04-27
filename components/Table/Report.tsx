@@ -104,7 +104,7 @@ const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
                       label="Potentially Hazardous?"
                       prop="hazardous"
                       render={renderAttribute}
-                      width={100}
+                      width={120}
                     />
                     <Table.Column label="Name" prop="name" />
                     <Table.Column
