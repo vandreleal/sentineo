@@ -2,9 +2,10 @@ import { NextPageContext } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
-import { queryNeoAsteroid } from '@/recoil/neo'
 import { Loading, Spacer } from '@geist-ui/react'
 import { useRecoilValueLoadable } from 'recoil'
+
+import { queryNeoAsteroid } from '@/recoil/neo'
 
 const CardObjectBasic = dynamic(() => import('@/components/Card/Object/Basic'))
 const CardObjectOrbit = dynamic(() => import('@/components/Card/Object/Orbit'))

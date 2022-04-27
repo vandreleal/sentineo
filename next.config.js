@@ -6,9 +6,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
-const withInterceptStdout = require('next-intercept-stdout')
 
-const nextConfig = withPlugins([withBundleAnalyzer, withInterceptStdout, withPWA], {
+const nextConfig = withPlugins([withBundleAnalyzer, withPWA], {
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,

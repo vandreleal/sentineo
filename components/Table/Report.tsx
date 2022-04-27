@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
 
-import { appStateDetailed } from '@/recoil/app'
 import { Button, ButtonGroup, Collapse, Dot, Grid, Table } from '@geist-ui/react'
 import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
+
+import { appStateDetailed } from '@/recoil/app'
 
 const ReportGrid = styled(Grid)`
   overflow: auto;
@@ -98,24 +99,22 @@ const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
                 title={index === 0 ? "Today's Report" : `${key}`}
               >
                 <ReportGrid>
-                  {data && (
-                    <Table data={data} emptyText="No objects">
-                      <Table.Column
-                        label="Potentially Hazardous?"
-                        prop="hazardous"
-                        render={renderAttribute}
-                        width={125}
-                      />
-                      <Table.Column label="Name" prop="name" />
-                      <Table.Column
-                        label={`Miss Distance (${preferences['miss_distance'].unit})`}
-                        prop={`prop_miss_distance`}
-                        width={200}
-                      />
-                      <Table.Column label="Abs Magnitude" prop="absolute_magnitude_h" />
-                      <Table.Column label="" prop="actions" render={renderActions} width={50} />
-                    </Table>
-                  )}
+                  <Table data={data} emptyText="No objects">
+                    <Table.Column
+                      label="Potentially Hazardous?"
+                      prop="hazardous"
+                      render={renderAttribute}
+                      width={100}
+                    />
+                    <Table.Column label="Name" prop="name" />
+                    <Table.Column
+                      label={`Miss Distance (${preferences['miss_distance'].unit})`}
+                      prop={`prop_miss_distance`}
+                      width={200}
+                    />
+                    <Table.Column label="Abs Magnitude" prop="absolute_magnitude_h" />
+                    <Table.Column label="" prop="actions" render={renderActions} width={50} />
+                  </Table>
                 </ReportGrid>
               </Collapse>
             </Collapse.Group>
