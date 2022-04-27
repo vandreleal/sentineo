@@ -41,7 +41,7 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
             </Grid>
           </Grid.Container>
         </Grid>
-        <Grid style={{ width: 160 }}>
+        <Grid>
           <Grid.Container alignItems="center" gap={1}>
             <Grid>
               <Tooltip placement="bottom" text={'Glossary'}>

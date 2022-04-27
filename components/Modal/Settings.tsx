@@ -1,10 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
 
-import { appState } from '@/recoil/app'
 import { Grid, Modal, Radio, Text } from '@geist-ui/react'
 import { ModalHooksBindings } from '@geist-ui/react/esm/use-modal'
 import { useRecoilState } from 'recoil'
 import styled from 'styled-components'
+
+import { appState } from '@/recoil/app'
 
 const Label = styled(Text)`
   margin-bottom: 1rem;

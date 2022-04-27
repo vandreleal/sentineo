@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    padding: 1rem 0 120px !important;
+    padding: 1rem 0 !important;
   }
 
   .btn {
@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   table {
-    min-width: 650px;
+    min-width: 700px;
   }
 
   @media print {

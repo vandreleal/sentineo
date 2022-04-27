@@ -1,6 +1,6 @@
 {
   "arrowParens": "avoid",
-  "importOrder": ["^(?!next-app-core$)(react|next(.*))$", "<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrder": ["^(react|next(.*))$", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"],
   "importOrderCaseInsensitive": true,
   "importOrderParserPlugins": ["classProperties", "decorators-legacy", "jsx", "typescript"],
   "importOrderSeparation": true,

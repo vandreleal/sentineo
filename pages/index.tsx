@@ -1,10 +1,11 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
-import { queryAPOD } from '@/recoil/apod'
-import { queryFeedParameters } from '@/recoil/feed'
 import { Loading, Spacer } from '@geist-ui/react'
 import { useRecoilValueLoadable } from 'recoil'
+
+import { queryAPOD } from '@/recoil/apod'
+import { queryFeedParameters } from '@/recoil/feed'
 
 const CardAPOD = dynamic(() => import('@/components/Card/APOD'))
 const TableReport = dynamic(() => import('@/components/Table/Report'))
@@ -21,16 +22,13 @@ const Home = () => {
       <Head>
         <title>SentiNEO</title>
       </Head>
-      {/* APOD */}
       {loadableAPOD.state === 'hasValue' && !apod.code && !apod.error && (
         <>
           <CardAPOD {...apod} />
           <Spacer h={1} />
         </>
       )}
-      {/* Feed */}
       {loadableFeed.state === 'hasValue' && <TableReport {...feed} />}
-      {/* Loading */}
       {(loadableFeed.state === 'loading' || loadableAPOD.state === 'loading') && <Loading>Loading</Loading>}
     </>
   )

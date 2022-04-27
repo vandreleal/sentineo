@@ -1,6 +1,7 @@
-import { appStateDetailed } from '@/recoil/app'
 import { Card, Description, Dot, Grid, Link, Spacer, Text, useMediaQuery } from '@geist-ui/react'
 import { useRecoilValue } from 'recoil'
+
+import { appStateDetailed } from '@/recoil/app'
 
 const formatNumber = (value: number) => {
   return new Intl.NumberFormat().format(value)

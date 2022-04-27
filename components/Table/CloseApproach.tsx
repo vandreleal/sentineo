@@ -1,7 +1,8 @@
-import { appStateDetailed } from '@/recoil/app'
 import { Collapse, Grid, Table } from '@geist-ui/react'
 import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
+
+import { appStateDetailed } from '@/recoil/app'
 
 const CloseApproachGrid = styled(Grid)`
   overflow: auto;
