@@ -1,6 +1,7 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 
 import { CssBaseline } from '@geist-ui/react'
+import packageData from 'package.json'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
@@ -37,14 +38,14 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link href="/icons/favicon.ico" rel="icon" />
-          <meta content="Near-Earth Objects Viewer" name="description" />
-          <meta content="NASA, NEO, APOD" name="keywords" />
-          <meta content="Vandré Leal" name="author" />
-          <meta content="Sentineo" name="application-name" />
+          <meta content={packageData.description} name="description" />
+          <meta content={packageData.keywords.toString()} name="keywords" />
+          <meta content={packageData.author} name="author" />
+          <meta content={packageData.displayName} name="application-name" />
           <meta content="yes" name="apple-mobile-web-app-capable" />
           <meta content="default" name="apple-mobile-web-app-status-bar-style" />
-          <meta content="Sentineo" name="apple-mobile-web-app-title" />
-          <meta content="Near-Earth Objects Viewer" name="description" />
+          <meta content={packageData.displayName} name="apple-mobile-web-app-title" />
+          <meta content={packageData.description} name="description" />
           <meta content="telephone=no" name="format-detection" />
           <meta content="yes" name="mobile-web-app-capable" />
           <meta content="/icons/browserconfig.xml" name="msapplication-config" />
@@ -58,17 +59,17 @@ class MyDocument extends Document {
           <link color="#555" href="/icons/safari-pinned-tab.svg" rel="mask-icon" />
           {/* Twitter */}
           <meta content="summary" name="twitter:card" />
-          <meta content="https://sentineo.app" name="twitter:url" />
-          <meta content="Sentineo" name="twitter:title" />
-          <meta content="Near-Earth Objects Viewer" name="twitter:description" />
-          <meta content="https://sentineo.app/icons/android-chrome-192x192.png" name="twitter:image" />
+          <meta content={packageData.url} name="twitter:url" />
+          <meta content={packageData.displayName} name="twitter:title" />
+          <meta content={packageData.description} name="twitter:description" />
+          <meta content="/icons/android-chrome-192x192.png" name="twitter:image" />
           {/* Open Graph */}
           <meta content="website" property="og:type" />
-          <meta content="Sentineo" property="og:title" />
-          <meta content="Near-Earth Objects Viewer" property="og:description" />
-          <meta content="Sentineo" property="og:site_name" />
-          <meta content="https://sentineo.app" property="og:url" />
-          <meta content="https://sentineo.app/icons/apple-touch-icon.png" property="og:image" />
+          <meta content={packageData.displayName} property="og:title" />
+          <meta content={packageData.description} property="og:description" />
+          <meta content={packageData.displayName} property="og:site_name" />
+          <meta content={packageData.url} property="og:url" />
+          <meta content="/icons/apple-touch-icon.png" property="og:image" />
           {/* Font: Space Mono */}
           <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         </Head>
