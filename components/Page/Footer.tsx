@@ -18,11 +18,13 @@ const PageFooter = () => {
         style={{ textAlign: 'center' }}
       >
         <Grid>
-          <Text b span font={0.875} style={{ display: 'block' }}>
-            <Link href="https://github.com/vandreleal/sentineo" rel="noopener" target="_blank">
+          <Text b span font={0.875}>
+            <Link href={packageData.homepage} rel="noopener noreferrer" target="_blank">
               Version {packageData.version}
             </Link>
           </Text>
+        </Grid>
+        <Grid>
           <Text span font={0.625}>
             Icon made by{' '}
             <a

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import { Fieldset, Grid, Link, Text } from '@geist-ui/react'
+import packageData from 'package.json'
 
 import glossary from '@/data/glossary'
 
@@ -8,7 +9,7 @@ const Glossary = () => {
   return (
     <>
       <Head>
-        <title>SentiNEO | Glossary</title>
+        <title>{packageData.displayName} | Glossary</title>
       </Head>
       <Grid style={{ maxWidth: 600, margin: '0 auto' }}>
         <Grid.Container direction="column" gap={3}>

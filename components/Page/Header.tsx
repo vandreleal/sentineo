@@ -1,12 +1,14 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
-import { Grid, Image, Page, Text, Tooltip, useModal } from '@geist-ui/react'
+import { Grid, Image, Page, Text } from '@geist-ui/react'
 import { Book, Moon, Settings, Sun } from '@geist-ui/react-icons'
-import { format } from 'date-fns'
+
+import { formatDate } from '@/utils/date'
 
 const ButtonRound = dynamic(() => import('@/components/Button/Round'))
-const ModalSettings = dynamic(() => import('@/components/Modal/Settings'))
+const DrawerSettings = dynamic(() => import('@/components/Drawer/Settings'))
 
 interface PageHeaderProps {
   themeType: string
@@ -15,20 +17,22 @@ interface PageHeaderProps {
 
 const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
   const router = useRouter()
-  const { setVisible, bindings } = useModal()
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false)
 
   return (
     <Page.Header center>
       <Grid.Container alignItems="center" gap={1} justify="space-between">
         <Grid sm>
-          <Grid.Container gap={1}>
+          <Grid.Container alignItems="center" gap={1}>
             <Grid>
               <Image alt="Logo" height="56px" src="/telescope.svg" width="56px" />
             </Grid>
             <Grid>
               <Text
-                h4
-                style={{ margin: '4px 0 0', cursor: 'pointer' }}
+                h1
+                font={1.25}
+                margin={0}
+                style={{ cursor: 'pointer' }}
                 onClick={() => {
                   router.push('/')
                 }}
@@ -36,7 +40,7 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
                 SentiNEO
               </Text>
               <Text span type="secondary">
-                {format(new Date(), 'yyyy-MM-dd')}
+                {formatDate(new Date())}
               </Text>
             </Grid>
           </Grid.Container>
@@ -44,32 +48,22 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
         <Grid>
           <Grid.Container alignItems="center" gap={1}>
             <Grid>
-              <Tooltip placement="bottom" text={'Glossary'}>
-                <ButtonRound
-                  aria-label="Glossary"
-                  icon={<Book />}
-                  onClick={() => {
-                    router.push('/glossary')
-                  }}
-                />
-              </Tooltip>
+              <ButtonRound
+                aria-label="Glossary"
+                icon={<Book />}
+                onClick={() => {
+                  router.push('/glossary')
+                }}
+              />
             </Grid>
             <Grid>
-              <Tooltip placement="bottom" text={'Theme'}>
-                <ButtonRound
-                  aria-label="Theme"
-                  icon={themeType === 'dark' ? <Moon /> : <Sun />}
-                  onClick={switchTheme}
-                />
-              </Tooltip>
+              <ButtonRound aria-label="Theme" icon={themeType === 'dark' ? <Moon /> : <Sun />} onClick={switchTheme} />
             </Grid>
             <Grid>
-              <Tooltip placement="bottom" text={'Settings'}>
-                <ButtonRound aria-label="Settings" icon={<Settings />} onClick={() => setVisible(true)} />
-              </Tooltip>
+              <ButtonRound aria-label="Settings" icon={<Settings />} onClick={() => setIsDrawerVisible(true)} />
             </Grid>
           </Grid.Container>
-          <ModalSettings bindings={bindings} setVisible={setVisible} />
+          <DrawerSettings isVisible={isDrawerVisible} setIsVisible={setIsDrawerVisible} />
         </Grid>
       </Grid.Container>
     </Page.Header>

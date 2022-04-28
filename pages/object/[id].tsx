@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import { Loading, Spacer } from '@geist-ui/react'
+import packageData from 'package.json'
 import { useRecoilValueLoadable } from 'recoil'
 
 import { queryNeoAsteroid } from '@/recoil/neo'
@@ -18,7 +19,9 @@ const Asteroid = ({ id }) => {
   return (
     <>
       <Head>
-        <title>SentiNEO | {data.name}</title>
+        <title>
+          {packageData.displayName} | {data.name}
+        </title>
       </Head>
       {loadable.state === 'hasValue' && (
         <>

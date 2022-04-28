@@ -1,15 +1,17 @@
 {
   "name": "sentineo",
   "version": "1.3.0",
+  "displayName": "SentiNEO",
   "description": "SentiNEO: Near-Earth Objects Viewer",
+  "url": "https://sentineo.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vandreleal/sentineo.git"
   },
   "keywords": [
-    "nasa",
-    "neows",
-    "asteroid"
+    "NASA",
+    "NeoWs",
+    "APOD"
   ],
   "author": "Vandré Leal",
   "license": "MIT",
