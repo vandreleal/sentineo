@@ -5,27 +5,4 @@ updates:
   schedule:
     interval: daily
     time: "07:00"
-  open-pull-requests-limit: 99
   target-branch: dev
-  ignore:
-  - dependency-name: "@types/node"
-    versions:
-    - 15.0.0
-  - dependency-name: webpack
-    versions:
-    - 5.31.2
-    - 5.34.0
-  - dependency-name: next-pwa
-    versions:
-    - 5.2.5
-  - dependency-name: styled-components
-    versions:
-    - 5.2.2
-  - dependency-name: next
-    versions:
-    - 10.0.6
-    - 10.0.7
-    - 10.0.8
-  - dependency-name: "@next/bundle-analyzer"
-    versions:
-    - 10.0.7
