@@ -1,14 +1,30 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+
+import { Grid, Text } from '@geist-ui/react'
+import packageData from 'package.json'
+import styled from 'styled-components'
+
+const Logo = styled(Image)`
+  transform: rotate(60deg);
+`
 
 const Custom404 = () => {
-  const router = useRouter()
-
-  useEffect(() => {
-    router.replace('/')
-  })
-
-  return null
+  return (
+    <>
+      <Head>
+        <title>{packageData.displayName} | 404</title>
+      </Head>
+      <Grid.Container alignItems="center" direction="column" gap={3} justify="center">
+        <Grid>
+          <Logo alt="404" height="120" src="/spaceship.svg" width="120" />
+        </Grid>
+        <Grid>
+          <Text h1>Lost in space?</Text>
+        </Grid>
+      </Grid.Container>
+    </>
+  )
 }
 
 export default Custom404

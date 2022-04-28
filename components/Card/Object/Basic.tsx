@@ -21,12 +21,10 @@ const CardObjectBasic = ({
 
   return (
     <Card>
-      <Grid>
-        <Text h3 style={{ marginBottom: '0' }}>
-          {name}
-        </Text>
-        {is_potentially_hazardous_asteroid && <Dot type="warning">Potentially Hazardous</Dot>}
-      </Grid>
+      <Text h3 margin={0}>
+        {name}
+      </Text>
+      {is_potentially_hazardous_asteroid && <Dot type="warning">Potentially Hazardous</Dot>}
       <Spacer h={2} />
       <Grid.Container gap={mqUpSM ? 0 : 2}>
         <Grid md={6} sm={8} xs={24}>

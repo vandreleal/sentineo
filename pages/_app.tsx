@@ -27,10 +27,9 @@ const App = ({ Component, pageProps }: AppProps) => {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
             name="viewport"
           />
-          <meta content="all" name="robots" />
         </Head>
         <Page
-          dotBackdrop={true}
+          dotBackdrop
           style={{
             width: '100%',
             height: '100%',
