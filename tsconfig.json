@@ -14,7 +14,8 @@
     "paths": {
       "@/data/*": ["data/*"],
       "@/components/*": ["components/*"],
-      "@/recoil/*": ["recoil/*"]
+      "@/recoil/*": ["recoil/*"],
+      "@/utils/*": ["utils/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

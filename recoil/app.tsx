@@ -1,8 +1,10 @@
 import { atom, selector } from 'recoil'
 
+import { getUniqueName } from '@/utils/strings'
+
 // App State
 export const appState = atom({
-  key: 'AppState',
+  key: getUniqueName('AppState'),
   default: {
     estimated_diameter: 'kilometers',
     miss_distance: 'kilometers',
@@ -12,7 +14,7 @@ export const appState = atom({
 
 // App State Detailed
 export const appStateDetailed = selector({
-  key: 'AppStateDetailed',
+  key: getUniqueName('AppStateDetailed'),
   get: ({ get }) => {
     const app = get(appState)
     const { estimated_diameter, miss_distance, relative_velocity } = app

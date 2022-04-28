@@ -1,19 +1,18 @@
 import getConfig from 'next/config'
 
-import { format, subDays } from 'date-fns'
+import { subDays } from 'date-fns'
 import { selector } from 'recoil'
+
+import { formatDate } from '@/utils/date'
+import { getUniqueName } from '@/utils/strings'
 
 const {
   publicRuntimeConfig: { HOST, API_KEY },
 } = getConfig()
 
-const formatDate = (date: Date) => {
-  return format(date, 'yyyy-MM-dd')
-}
-
 // Get APOD: Astronomy Picture of the Day
 export const queryAPOD = selector({
-  key: 'QueryAPOD',
+  key: getUniqueName('QueryAPOD'),
   get: async () => {
     const now = new Date()
     const today = formatDate(now)
