@@ -15,7 +15,7 @@ const Custom404 = () => {
       <Head>
         <title>{packageData.displayName} | 404</title>
       </Head>
-      <Grid.Container alignItems="center" direction="column" gap={3} justify="center">
+      <Grid.Container alignItems="center" direction="column" gap={3} justify="center" style={{ textAlign: 'center' }}>
         <Grid>
           <Logo alt="404" height="120" src="/spaceship.svg" width="120" />
         </Grid>

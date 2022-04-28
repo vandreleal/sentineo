@@ -11,10 +11,10 @@ const Glossary = () => {
       <Head>
         <title>{packageData.displayName} | Glossary</title>
       </Head>
-      <Grid style={{ maxWidth: 600, margin: '0 auto' }}>
+      <Grid style={{ maxWidth: 600, marginInline: 'auto' }}>
         <Grid.Container direction="column" gap={3}>
           <Grid style={{ textAlign: 'center' }}>
-            <Text h3>Glossary</Text>
+            <Text h2>Glossary</Text>
             <Link block href="https://cneos.jpl.NASA.gov/glossary" rel="noopener" target="_blank">
               <Text small>https://cneos.jpl.NASA.gov/glossary</Text>
             </Link>

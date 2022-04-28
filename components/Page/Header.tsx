@@ -29,10 +29,11 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
             </Grid>
             <Grid>
               <Text
-                h1
+                b
+                span
                 font={1.25}
                 margin={0}
-                style={{ cursor: 'pointer' }}
+                style={{ display: 'block', cursor: 'pointer' }}
                 onClick={() => {
                   router.push('/')
                 }}

@@ -69,10 +69,6 @@ const Glossary: Glossary = [
       'The line of intersection between the orbit plane and the plane of the ecliptic (the Earth’s orbit plane). (Not defined if orbit lies exactly in the plane of the ecliptic.)',
   },
   {
-    term: 'inclination',
-    definition: 'Angle between the orbit plane and the ecliptic plane.',
-  },
-  {
     term: 'longitude of the ascending node',
     definition:
       'Angle in the ecliptic plane between the inertial-frame x-axis and the line through the ascending node.',
