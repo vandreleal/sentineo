@@ -33,7 +33,7 @@ const DrawerSettings = ({ isVisible, setIsVisible }: DrawerSettingsProps) => {
   }
 
   return (
-    <Drawer style={{ backgroundColor: 'transparent' }} visible={isVisible} onClose={() => setIsVisible(false)}>
+    <Drawer visible={isVisible} onClose={() => setIsVisible(false)}>
       <Drawer.Content pt={0}>
         <Grid.Container alignItems="center" justify="space-between">
           <Grid>
