@@ -29,7 +29,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           />
         </Head>
         <Page
-          dotBackdrop={true}
+          dotBackdrop
           style={{
             width: '100%',
             height: '100%',

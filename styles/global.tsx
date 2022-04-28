@@ -3,24 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
-
-    div {
-      &::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-
-        &-track {
-          background: GhostWhite, 0.25;
-          box-shadow: inset 0 0 6px rgba(black, 0.15);
-        }
-
-        &-thumb {
-          background-color: DarkGray;
-          border-radius: 25px;
-          border: 3px solid transparent;
-        }
-      }
-    }
   }
 
   html,
@@ -49,12 +31,9 @@ const GlobalStyle = createGlobalStyle`
   .card,
   .fieldset,
   .collapse-group {
+    padding: 0 !important;
     backdrop-filter: blur(25px);
     background-color: hsl(0 0% 50% / 10%) !important;
-  }
-
-  .collapse-group {
-    padding: 0 !important;
   }
 
   .dot {

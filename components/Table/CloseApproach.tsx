@@ -24,16 +24,16 @@ const CloseApproachGrid = styled(Grid)`
 `
 
 const TableCloseApproach = ({ close_approach_data }: NASA.NeoWs.NearEarthObject) => {
-  const preferences = useRecoilValue(appStateDetailed)
+  const settings = useRecoilValue(appStateDetailed)
 
   if (!close_approach_data) {
     return null
   }
 
   const getAttributeByPref = (item: NASA.NeoWs.CloseApproach, attribute: string) => {
-    const value = item[attribute][preferences[attribute].value]
+    const value = item[attribute][settings[attribute].value]
 
-    return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
+    return `${new Intl.NumberFormat().format(value)} ${settings[attribute].unit}`
   }
 
   const tableData = close_approach_data.map((item: NASA.NeoWs.CloseApproach) => ({
@@ -55,9 +55,9 @@ const TableCloseApproach = ({ close_approach_data }: NASA.NeoWs.NearEarthObject)
           <Table data={tableData} emptyText="No close approaches">
             <Table.Column label="Orbiting" prop="orbiting_body" width={125} />
             <Table.Column label="Date" prop="close_approach_date_full" width={175} />
-            <Table.Column label={`Miss Distance (${preferences['miss_distance'].unit})`} prop={`prop_miss_distance`} />
+            <Table.Column label={`Miss Distance (${settings['miss_distance'].unit})`} prop={`prop_miss_distance`} />
             <Table.Column
-              label={`Relative Velocity (${preferences['relative_velocity'].unit})`}
+              label={`Relative Velocity (${settings['relative_velocity'].unit})`}
               prop={`prop_relative_velocity`}
             />
           </Table>

@@ -15,32 +15,30 @@ const CardObjectBasic = ({
   nasa_jpl_url,
 }: NASA.NeoWs.NearEarthObject) => {
   const mqUpSM = useMediaQuery('sm', { match: 'up' })
-  const preferences = useRecoilValue(appStateDetailed)
+  const settings = useRecoilValue(appStateDetailed)
 
-  const estimatedDiameter = estimated_diameter[preferences.estimated_diameter.value]
+  const estimatedDiameter = estimated_diameter[settings.estimated_diameter.value]
 
   return (
     <Card>
-      <Grid>
-        <Text h3 style={{ marginBottom: '0' }}>
-          {name}
-        </Text>
-        {is_potentially_hazardous_asteroid && <Dot type="warning">Potentially Hazardous</Dot>}
-      </Grid>
-      <Spacer h={1} />
+      <Text h3 margin={0}>
+        {name}
+      </Text>
+      {is_potentially_hazardous_asteroid && <Dot type="warning">Potentially Hazardous</Dot>}
+      <Spacer h={2} />
       <Grid.Container gap={mqUpSM ? 0 : 2}>
         <Grid md={6} sm={8} xs={24}>
           <Description content={absolute_magnitude_h} title={'Absolute Magnitude (H)'} />
         </Grid>
         <Grid md={6} sm={8} xs={24}>
           <Description
-            content={`${formatNumber(estimatedDiameter.estimated_diameter_min)} ${preferences.estimated_diameter.unit}`}
+            content={`${formatNumber(estimatedDiameter.estimated_diameter_min)} ${settings.estimated_diameter.unit}`}
             title={'Estimated Diameter (Min)'}
           />
         </Grid>
         <Grid md={6} sm={8} xs={24}>
           <Description
-            content={`${formatNumber(estimatedDiameter.estimated_diameter_max)} ${preferences.estimated_diameter.unit}`}
+            content={`${formatNumber(estimatedDiameter.estimated_diameter_max)} ${settings.estimated_diameter.unit}`}
             title={'Estimated Diameter (Max)'}
           />
         </Grid>

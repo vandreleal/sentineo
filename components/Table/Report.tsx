@@ -26,7 +26,7 @@ const ReportGrid = styled(Grid)`
 `
 
 const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
-  const preferences = useRecoilValue(appStateDetailed)
+  const settings = useRecoilValue(appStateDetailed)
   const router = useRouter()
 
   const getAttribute = (rowData: NASA.NeoWs.NearEarthObjects, attribute: string) => {
@@ -36,9 +36,9 @@ const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
   }
 
   const getAttributeByPref = (item: NASA.NeoWs.NearEarthObjects, attribute: string) => {
-    const value = item.close_approach_data[0][attribute][preferences[attribute].value]
+    const value = item.close_approach_data[0][attribute][settings[attribute].value]
 
-    return `${new Intl.NumberFormat().format(value)} ${preferences[attribute].unit}`
+    return `${new Intl.NumberFormat().format(value)} ${settings[attribute].unit}`
   }
 
   const getReportData = (object: NASA.NeoWs.NearEarthObjects[]) => {
@@ -108,7 +108,7 @@ const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
                     />
                     <Table.Column label="Name" prop="name" />
                     <Table.Column
-                      label={`Miss Distance (${preferences['miss_distance'].unit})`}
+                      label={`Miss Distance (${settings['miss_distance'].unit})`}
                       prop={`prop_miss_distance`}
                       width={200}
                     />

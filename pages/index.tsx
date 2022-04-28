@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import { Loading, Spacer } from '@geist-ui/react'
+import packageData from 'package.json'
 import { useRecoilValueLoadable } from 'recoil'
 
 import { queryAPOD } from '@/recoil/apod'
@@ -20,7 +21,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>SentiNEO</title>
+        <title>{packageData.displayName}</title>
       </Head>
       {loadableAPOD.state === 'hasValue' && !apod.code && !apod.error && (
         <>
