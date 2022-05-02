@@ -2,6 +2,7 @@ import { Card, Description, Dot, Grid, Link, Spacer, Text, useMediaQuery } from 
 import { useRecoilValue } from 'recoil'
 
 import { appStateDetailed } from '@/recoil/app'
+import { getOrbitViewerLink } from '@/utils/strings'
 
 const formatNumber = (value: number) => {
   return new Intl.NumberFormat().format(value)
@@ -13,6 +14,7 @@ const CardObjectBasic = ({
   is_potentially_hazardous_asteroid,
   name,
   nasa_jpl_url,
+  orbital_data,
 }: NASA.NeoWs.NearEarthObject) => {
   const mqUpSM = useMediaQuery('sm', { match: 'up' })
   const settings = useRecoilValue(appStateDetailed)
@@ -44,9 +46,12 @@ const CardObjectBasic = ({
         </Grid>
       </Grid.Container>
       <Card.Footer>
-        {mqUpSM && <Text span>NASA JPL URL:</Text>}
+        <Text span>Links:</Text>
         <Link block href={nasa_jpl_url} rel="noopener" target="_blank">
-          {nasa_jpl_url}
+          NASA JPL
+        </Link>
+        <Link block href={getOrbitViewerLink(name, orbital_data)} rel="noopener" target="_blank">
+          Orbit Viewer
         </Link>
       </Card.Footer>
     </Card>
