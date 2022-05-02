@@ -9,7 +9,6 @@ const runtimeCaching = require('next-pwa/cache')
 
 const nextConfig = withPlugins([withBundleAnalyzer, withPWA], {
   compiler: {
-    // ssr and displayName are configured by default
     styledComponents: true,
   },
   publicRuntimeConfig: {
@@ -24,15 +23,6 @@ const nextConfig = withPlugins([withBundleAnalyzer, withPWA], {
   },
   reactStrictMode: true,
   swcMinify: true,
-  webpack: config => {
-    // SVG Loader
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack', 'url-loader'],
-    })
-
-    return config
-  },
 })
 
 module.exports = nextConfig
