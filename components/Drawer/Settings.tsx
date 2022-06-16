@@ -43,6 +43,7 @@ const DrawerSettings = ({ isVisible, setIsVisible }: DrawerSettingsProps) => {
           </Grid>
           <Grid>
             <ButtonRound
+              auto
               aria-label="Close Settings"
               icon={<X />}
               onClick={() => {

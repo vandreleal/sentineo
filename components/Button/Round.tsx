@@ -1,6 +1,6 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
-import { Button } from '@geist-ui/core'
+import { Button, ButtonProps } from '@geist-ui/core'
 import styled from 'styled-components'
 
 const StyledButton = styled(Button)`
@@ -11,12 +11,9 @@ const StyledButton = styled(Button)`
   border-width: 2px !important;
 `
 
-interface Props {
+interface ButtonRoundProps extends ButtonProps {
   icon: ReactNode
 }
-
-type NativeAttrs = Omit<HTMLAttributes<HTMLButtonElement>, keyof Props>
-type ButtonRoundProps = Props & NativeAttrs
 
 const ButtonRound = ({ icon, ...props }: ButtonRoundProps) => {
   return <StyledButton icon={icon} {...props} />
