@@ -1,11 +1,12 @@
 import Head from 'next/head'
+import { FC } from 'react'
 
 import { Fieldset, Grid, Link, Text } from '@geist-ui/core'
 import packageData from 'package.json'
 
 import glossary from '@/data/glossary'
 
-const Glossary = () => {
+const Glossary: FC = () => {
   return (
     <>
       <Head>

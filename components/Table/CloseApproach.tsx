@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Collapse, Grid, Table } from '@geist-ui/core'
 import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
@@ -23,7 +25,7 @@ const CloseApproachGrid = styled(Grid)`
   }
 `
 
-const TableCloseApproach = ({ close_approach_data }: NASA.NeoWs.NearEarthObject) => {
+const TableCloseApproach: FC<NASA.NeoWs.NearEarthObject> = ({ close_approach_data }) => {
   const settings = useRecoilValue(appStateDetailed)
 
   if (!close_approach_data) {

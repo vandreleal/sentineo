@@ -1,6 +1,8 @@
+import { FC } from 'react'
+
 import { Collapse, Description, Grid, Text } from '@geist-ui/core'
 
-const CardObjectOrbit = ({ orbital_data }: NASA.NeoWs.NearEarthObject) => {
+const CardObjectOrbit: FC<NASA.NeoWs.NearEarthObject> = ({ orbital_data }) => {
   if (!orbital_data) {
     return null
   }

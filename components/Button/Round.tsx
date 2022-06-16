@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { Button, ButtonProps } from '@geist-ui/core'
 import styled from 'styled-components'
@@ -15,7 +15,7 @@ interface ButtonRoundProps extends ButtonProps {
   icon: ReactNode
 }
 
-const ButtonRound = ({ icon, ...props }: ButtonRoundProps) => {
+const ButtonRound: FC<ButtonRoundProps> = ({ icon, ...props }) => {
   return <StyledButton icon={icon} {...props} />
 }
 

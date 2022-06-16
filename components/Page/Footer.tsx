@@ -1,7 +1,9 @@
+import { FC } from 'react'
+
 import { Grid, Link, Page, Text } from '@geist-ui/core'
 import packageData from 'package.json'
 
-const PageFooter = () => {
+const PageFooter: FC = () => {
   return (
     <Page.Footer
       style={{

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { FC } from 'react'
 
 import { Grid, Text } from '@geist-ui/core'
 import packageData from 'package.json'
@@ -9,7 +10,7 @@ const Logo = styled(Image)`
   transform: rotate(60deg);
 `
 
-const Custom404 = () => {
+const Custom404: FC = () => {
   return (
     <>
       <Head>

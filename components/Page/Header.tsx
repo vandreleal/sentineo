@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
 import { Grid, Image, Page, Text } from '@geist-ui/core'
 import { Book, Moon, Settings, Sun } from '@geist-ui/icons'
@@ -16,7 +16,7 @@ interface PageHeaderProps {
   switchTheme?: VoidFunction
 }
 
-const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
+const PageHeader: FC<PageHeaderProps> = ({ themeType = 'dark', switchTheme }) => {
   const router = useRouter()
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
 

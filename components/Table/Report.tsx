@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { FC } from 'react'
 
 import { Button, ButtonGroup, Collapse, Dot, Grid, Table } from '@geist-ui/core'
 import { useRecoilValue } from 'recoil'
@@ -25,7 +26,7 @@ const ReportGrid = styled(Grid)`
   }
 `
 
-const TableReport = ({ near_earth_objects }: NASA.NeoWs.NearEarthObjects) => {
+const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({ near_earth_objects }) => {
   const settings = useRecoilValue(appStateDetailed)
   const router = useRouter()
 

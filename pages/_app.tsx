@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
 import { CssBaseline, GeistProvider, Page } from '@geist-ui/core'
 import packageData from 'package.json'
@@ -11,7 +11,7 @@ import GlobalStyle from 'styles/global'
 const PageHeader = dynamic(() => import('@/components/Page/Header'))
 const PageFooter = dynamic(() => import('@/components/Page/Footer'))
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [themeType, setThemeType] = useState('dark')
 
   const switchTheme = () => {
