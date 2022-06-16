@@ -2,8 +2,8 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import { Grid, Image, Page, Text } from '@geist-ui/react'
-import { Book, Moon, Settings, Sun } from '@geist-ui/react-icons'
+import { Grid, Image, Page, Text } from '@geist-ui/core'
+import { Book, Moon, Settings, Sun } from '@geist-ui/icons'
 
 import { formatDate } from '@/utils/date'
 

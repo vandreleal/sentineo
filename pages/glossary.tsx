@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Fieldset, Grid, Link, Text } from '@geist-ui/react'
+import { Fieldset, Grid, Link, Text } from '@geist-ui/core'
 import packageData from 'package.json'
 
 import glossary from '@/data/glossary'

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { Button, ButtonGroup, Collapse, Dot, Grid, Table } from '@geist-ui/react'
+import { Button, ButtonGroup, Collapse, Dot, Grid, Table } from '@geist-ui/core'
 import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
 

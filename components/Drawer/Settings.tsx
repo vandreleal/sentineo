@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
-import { Divider, Drawer, Grid, Radio, Spacer, Text } from '@geist-ui/react'
-import { X } from '@geist-ui/react-icons'
+import { Divider, Drawer, Grid, Radio, Spacer, Text } from '@geist-ui/core'
+import { X } from '@geist-ui/icons'
 import { useRecoilState } from 'recoil'
 
 import ButtonRound from '@/components/Button/Round'

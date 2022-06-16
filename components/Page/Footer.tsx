@@ -1,4 +1,4 @@
-import { Grid, Link, Page, Text } from '@geist-ui/react'
+import { Grid, Link, Page, Text } from '@geist-ui/core'
 import packageData from 'package.json'
 
 const PageFooter = () => {
