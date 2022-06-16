@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 
 import { Divider, Drawer, Grid, Radio, Spacer, Text } from '@geist-ui/core'
 import { X } from '@geist-ui/icons'
@@ -13,7 +13,7 @@ interface DrawerSettingsProps {
   setIsVisible: Dispatch<SetStateAction<boolean>>
 }
 
-const DrawerSettings = ({ isVisible, setIsVisible }: DrawerSettingsProps) => {
+const DrawerSettings: FC<DrawerSettingsProps> = ({ isVisible, setIsVisible }) => {
   const [settings, setSettings] = useRecoilState(appState)
 
   const onSelectChange = (val: string, key: string) => {

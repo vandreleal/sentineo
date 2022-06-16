@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import { FC } from 'react'
 
 import { Loading, Spacer } from '@geist-ui/core'
 import packageData from 'package.json'
@@ -11,7 +12,7 @@ import { queryFeedParameters } from '@/recoil/feed'
 const CardAPOD = dynamic(() => import('@/components/Card/APOD'))
 const TableReport = dynamic(() => import('@/components/Table/Report'))
 
-const Home = () => {
+const Home: FC = () => {
   const loadableAPOD = useRecoilValueLoadable(queryAPOD)
   const loadableFeed = useRecoilValueLoadable(queryFeedParameters)
 

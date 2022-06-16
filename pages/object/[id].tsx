@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next'
+import { NextPage, NextPageContext } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
@@ -12,7 +12,11 @@ const CardObjectBasic = dynamic(() => import('@/components/Card/Object/Basic'))
 const CardObjectOrbit = dynamic(() => import('@/components/Card/Object/Orbit'))
 const TableCloseApproach = dynamic(() => import('@/components/Table/CloseApproach'))
 
-const Asteroid = ({ id }) => {
+interface AsteroidProps {
+  id: string
+}
+
+const Asteroid: NextPage<AsteroidProps> = ({ id }) => {
   const loadable = useRecoilValueLoadable(queryNeoAsteroid(id))
   const data = loadable.contents
 
@@ -38,7 +42,7 @@ const Asteroid = ({ id }) => {
 }
 
 Asteroid.getInitialProps = async (ctx: NextPageContext) => {
-  return { ...ctx.query }
+  return { id: ctx.query.id as string }
 }
 
 export default Asteroid

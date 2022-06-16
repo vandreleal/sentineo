@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Card, Description, Divider, Grid, Image, Link } from '@geist-ui/core'
 import styled from 'styled-components'
 
@@ -22,7 +24,7 @@ const CustomDescription = styled(Description)`
   }
 `
 
-const CardAPOD = ({ copyright, date, explanation, hdurl, media_type, title, url }: NASA.NeoWs.APOD) => {
+const CardAPOD: FC<NASA.NeoWs.APOD> = ({ copyright, date, explanation, hdurl, media_type, title, url }) => {
   return (
     <Card key={title}>
       <Card.Content style={{ padding: 0 }}>

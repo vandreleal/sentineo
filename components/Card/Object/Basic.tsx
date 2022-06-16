@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Card, Description, Dot, Grid, Link, Spacer, Text, useMediaQuery } from '@geist-ui/core'
 import { useRecoilValue } from 'recoil'
 
@@ -8,14 +10,14 @@ const formatNumber = (value: number) => {
   return new Intl.NumberFormat().format(value)
 }
 
-const CardObjectBasic = ({
+const CardObjectBasic: FC<NASA.NeoWs.NearEarthObject> = ({
   absolute_magnitude_h,
   estimated_diameter,
   is_potentially_hazardous_asteroid,
   name,
   nasa_jpl_url,
   orbital_data,
-}: NASA.NeoWs.NearEarthObject) => {
+}) => {
   const mqUpSM = useMediaQuery('sm', { match: 'up' })
   const settings = useRecoilValue(appStateDetailed)
 
