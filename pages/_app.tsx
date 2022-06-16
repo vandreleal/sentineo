@@ -50,4 +50,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default App
+export default dynamic(() => Promise.resolve(App), {
+  ssr: false,
+})

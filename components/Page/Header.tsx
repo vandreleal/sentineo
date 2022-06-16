@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { Grid, Image, Page, Text } from '@geist-ui/core'
 import { Book, Moon, Settings, Sun } from '@geist-ui/icons'
+import packageData from 'package.json'
 
 import { formatDate } from '@/utils/date'
 
@@ -38,7 +39,7 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
                   router.push('/')
                 }}
               >
-                SentiNEO
+                {packageData.displayName}
               </Text>
               <Text span type="secondary">
                 {formatDate(new Date())}
@@ -50,6 +51,7 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
           <Grid.Container alignItems="center" gap={1}>
             <Grid>
               <ButtonRound
+                auto
                 aria-label="Glossary"
                 icon={<Book />}
                 onClick={() => {
@@ -58,10 +60,15 @@ const PageHeader = ({ themeType = 'dark', switchTheme }: PageHeaderProps) => {
               />
             </Grid>
             <Grid>
-              <ButtonRound aria-label="Theme" icon={themeType === 'dark' ? <Moon /> : <Sun />} onClick={switchTheme} />
+              <ButtonRound
+                auto
+                aria-label="Theme"
+                icon={themeType === 'dark' ? <Moon /> : <Sun />}
+                onClick={switchTheme}
+              />
             </Grid>
             <Grid>
-              <ButtonRound aria-label="Settings" icon={<Settings />} onClick={() => setIsDrawerVisible(true)} />
+              <ButtonRound auto aria-label="Settings" icon={<Settings />} onClick={() => setIsDrawerVisible(true)} />
             </Grid>
           </Grid.Container>
           <DrawerSettings isVisible={isDrawerVisible} setIsVisible={setIsDrawerVisible} />
