@@ -1,4 +1,4 @@
-import { Card, Description, Divider, Grid, Image, Link } from '@geist-ui/react'
+import { Card, Description, Divider, Grid, Image, Link } from '@geist-ui/core'
 import styled from 'styled-components'
 
 const ImageBrowser = styled(Image.Browser)`

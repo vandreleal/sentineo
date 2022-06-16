@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
-import { Loading, Spacer } from '@geist-ui/react'
+import { Loading, Spacer } from '@geist-ui/core'
 import packageData from 'package.json'
 import { useRecoilValueLoadable } from 'recoil'
 

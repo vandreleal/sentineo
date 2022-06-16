@@ -1,4 +1,4 @@
-import { Card, Description, Dot, Grid, Link, Spacer, Text, useMediaQuery } from '@geist-ui/react'
+import { Card, Description, Dot, Grid, Link, Spacer, Text, useMediaQuery } from '@geist-ui/core'
 import { useRecoilValue } from 'recoil'
 
 import { appStateDetailed } from '@/recoil/app'

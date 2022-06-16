@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Grid, Text } from '@geist-ui/react'
+import { Grid, Text } from '@geist-ui/core'
 import packageData from 'package.json'
 import styled from 'styled-components'
 

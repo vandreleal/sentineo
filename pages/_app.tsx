@@ -3,7 +3,8 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useState } from 'react'
 
-import { CssBaseline, GeistProvider, Page } from '@geist-ui/react'
+import { CssBaseline, GeistProvider, Page } from '@geist-ui/core'
+import packageData from 'package.json'
 import { RecoilRoot } from 'recoil'
 import GlobalStyle from 'styles/global'
 
@@ -23,6 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <CssBaseline />
         <GlobalStyle />
         <Head>
+          <title>{packageData.displayName}</title>
           <meta
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
             name="viewport"

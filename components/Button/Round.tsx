@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react'
 
-import { Button } from '@geist-ui/react'
+import { Button } from '@geist-ui/core'
 import styled from 'styled-components'
 
 const StyledButton = styled(Button)`

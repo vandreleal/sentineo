@@ -1,4 +1,4 @@
-import { Collapse, Grid, Table } from '@geist-ui/react'
+import { Collapse, Grid, Table } from '@geist-ui/core'
 import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
 
