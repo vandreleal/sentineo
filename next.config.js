@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
-const withPlugins = require('next-compose-plugins')
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withPlugins = require("next-compose-plugins")
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 })
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
+const withPWA = require("next-pwa")
+const runtimeCaching = require("next-pwa/cache")
 
 const nextConfig = withPlugins([withBundleAnalyzer, withPWA], {
   compiler: {
@@ -17,8 +17,8 @@ const nextConfig = withPlugins([withBundleAnalyzer, withPWA], {
     HOST: process.env.HOST,
   },
   pwa: {
-    dest: 'public',
-    disable: process.env.NODE_ENV === 'development',
+    dest: "public",
+    disable: process.env.NODE_ENV === "development",
     runtimeCaching,
   },
   reactStrictMode: true,

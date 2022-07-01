@@ -1,16 +1,16 @@
-import dynamic from 'next/dynamic'
-import Head from 'next/head'
-import { FC } from 'react'
+import dynamic from "next/dynamic"
+import Head from "next/head"
+import { FC } from "react"
 
-import { Loading, Spacer } from '@geist-ui/core'
-import packageData from 'package.json'
-import { useRecoilValueLoadable } from 'recoil'
+import { Loading, Spacer } from "@geist-ui/core"
+import packageData from "package.json"
+import { useRecoilValueLoadable } from "recoil"
 
-import { queryAPOD } from '@/recoil/apod'
-import { queryFeedParameters } from '@/recoil/feed'
+import { queryAPOD } from "@/recoil/apod"
+import { queryFeedParameters } from "@/recoil/feed"
 
-const CardAPOD = dynamic(() => import('@/components/Card/APOD'))
-const TableReport = dynamic(() => import('@/components/Table/Report'))
+const CardAPOD = dynamic(() => import("@/components/Card/APOD"))
+const TableReport = dynamic(() => import("@/components/Table/Report"))
 
 const Home: FC = () => {
   const loadableAPOD = useRecoilValueLoadable(queryAPOD)
@@ -24,14 +24,15 @@ const Home: FC = () => {
       <Head>
         <title>{packageData.displayName}</title>
       </Head>
-      {loadableAPOD.state === 'hasValue' && !apod.code && !apod.error && (
+      {loadableAPOD.state === "hasValue" && !apod.code && !apod.error && (
         <>
           <CardAPOD {...apod} />
           <Spacer h={1} />
         </>
       )}
-      {loadableFeed.state === 'hasValue' && <TableReport {...feed} />}
-      {(loadableFeed.state === 'loading' || loadableAPOD.state === 'loading') && <Loading>Loading</Loading>}
+      {loadableFeed.state === "hasValue" && <TableReport {...feed} />}
+      {(loadableFeed.state === "loading" ||
+        loadableAPOD.state === "loading") && <Loading>Loading</Loading>}
     </>
   )
 }

@@ -1,12 +1,19 @@
 {
   "arrowParens": "avoid",
-  "importOrder": ["^(react|next(.*))$", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"],
+  "importOrder": [
+    "^(react|next(.*))$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/(.*)$",
+    "^[./]"
+  ],
   "importOrderCaseInsensitive": true,
-  "importOrderParserPlugins": ["classProperties", "decorators-legacy", "jsx", "typescript"],
+  "importOrderParserPlugins": [
+    "classProperties",
+    "decorators-legacy",
+    "jsx",
+    "typescript"
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "printWidth": 120,
-  "semi": false,
-  "singleQuote": true,
-  "trailingComma": "all"
+  "semi": false
 }

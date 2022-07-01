@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { FC } from 'react'
+import Head from "next/head"
+import Image from "next/image"
+import { FC } from "react"
 
-import { Grid, Text } from '@geist-ui/core'
-import packageData from 'package.json'
-import styled from 'styled-components'
+import { Grid, Text } from "@geist-ui/core"
+import packageData from "package.json"
+import styled from "styled-components"
 
 const Logo = styled(Image)`
   transform: rotate(60deg);
@@ -16,7 +16,13 @@ const Custom404: FC = () => {
       <Head>
         <title>{packageData.displayName} | 404</title>
       </Head>
-      <Grid.Container alignItems="center" direction="column" gap={3} justify="center" style={{ textAlign: 'center' }}>
+      <Grid.Container
+        alignItems="center"
+        direction="column"
+        gap={3}
+        justify="center"
+        style={{ textAlign: "center" }}
+      >
         <Grid>
           <Logo alt="404" height="120" src="/spaceship.svg" width="120" />
         </Grid>
