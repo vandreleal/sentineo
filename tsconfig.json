@@ -12,10 +12,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@/data/*": ["data/*"],
-      "@/components/*": ["components/*"],
-      "@/recoil/*": ["recoil/*"],
-      "@/utils/*": ["utils/*"]
+      "@/*": ["*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
