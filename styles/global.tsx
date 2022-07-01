@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -36,10 +36,8 @@ const GlobalStyle = createGlobalStyle`
     background-color: hsl(0 0% 50% / 10%) !important;
   }
 
-  .dot {
-    .label {
-      text-transform: uppercase !important;
-    }
+  .dot > .label {
+    text-transform: uppercase !important;
   }
 
   dt {

@@ -1,22 +1,25 @@
-import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
-import { FC, useState } from 'react'
+import dynamic from "next/dynamic"
+import { useRouter } from "next/router"
+import { FC, useState } from "react"
 
-import { Grid, Image, Page, Text } from '@geist-ui/core'
-import { Book, Moon, Settings, Sun } from '@geist-ui/icons'
-import packageData from 'package.json'
+import { Grid, Image, Page, Text } from "@geist-ui/core"
+import { Book, Moon, Settings, Sun } from "@geist-ui/icons"
+import packageData from "package.json"
 
-import { formatDate } from '@/utils/date'
+import { formatDate } from "@/utils/date"
 
-const ButtonRound = dynamic(() => import('@/components/Button/Round'))
-const DrawerSettings = dynamic(() => import('@/components/Drawer/Settings'))
+const ButtonRound = dynamic(() => import("@/components/Button/Round"))
+const DrawerSettings = dynamic(() => import("@/components/Drawer/Settings"))
 
 interface PageHeaderProps {
   themeType: string
   switchTheme?: VoidFunction
 }
 
-const PageHeader: FC<PageHeaderProps> = ({ themeType = 'dark', switchTheme }) => {
+const PageHeader: FC<PageHeaderProps> = ({
+  themeType = "dark",
+  switchTheme,
+}) => {
   const router = useRouter()
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
 
@@ -26,7 +29,12 @@ const PageHeader: FC<PageHeaderProps> = ({ themeType = 'dark', switchTheme }) =>
         <Grid sm>
           <Grid.Container alignItems="center" gap={1}>
             <Grid>
-              <Image alt="Logo" height="56px" src="/telescope.svg" width="56px" />
+              <Image
+                alt="Logo"
+                height="56px"
+                src="/telescope.svg"
+                width="56px"
+              />
             </Grid>
             <Grid>
               <Text
@@ -34,9 +42,9 @@ const PageHeader: FC<PageHeaderProps> = ({ themeType = 'dark', switchTheme }) =>
                 span
                 font={1.25}
                 margin={0}
-                style={{ display: 'block', cursor: 'pointer' }}
+                style={{ display: "block", cursor: "pointer" }}
                 onClick={() => {
-                  router.push('/')
+                  router.push("/")
                 }}
               >
                 {packageData.displayName}
@@ -55,7 +63,7 @@ const PageHeader: FC<PageHeaderProps> = ({ themeType = 'dark', switchTheme }) =>
                 aria-label="Glossary"
                 icon={<Book />}
                 onClick={() => {
-                  router.push('/glossary')
+                  router.push("/glossary")
                 }}
               />
             </Grid>
@@ -63,15 +71,23 @@ const PageHeader: FC<PageHeaderProps> = ({ themeType = 'dark', switchTheme }) =>
               <ButtonRound
                 auto
                 aria-label="Theme"
-                icon={themeType === 'dark' ? <Moon /> : <Sun />}
+                icon={themeType === "dark" ? <Moon /> : <Sun />}
                 onClick={switchTheme}
               />
             </Grid>
             <Grid>
-              <ButtonRound auto aria-label="Settings" icon={<Settings />} onClick={() => setIsDrawerVisible(true)} />
+              <ButtonRound
+                auto
+                aria-label="Settings"
+                icon={<Settings />}
+                onClick={() => setIsDrawerVisible(true)}
+              />
             </Grid>
           </Grid.Container>
-          <DrawerSettings isVisible={isDrawerVisible} setIsVisible={setIsDrawerVisible} />
+          <DrawerSettings
+            isVisible={isDrawerVisible}
+            setIsVisible={setIsDrawerVisible}
+          />
         </Grid>
       </Grid.Container>
     </Page.Header>

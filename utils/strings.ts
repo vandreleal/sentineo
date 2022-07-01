@@ -1,10 +1,13 @@
-import { v1 as uuidv1 } from 'uuid'
+import { v1 as uuidv1 } from "uuid"
 
 export const getUniqueName = (name: string) => {
   return `${name}/${uuidv1()}`
 }
 
-export const getOrbitViewerLink = (name: string, orbital_data: NASA.NeoWs.Orbit) => {
+export const getOrbitViewerLink = (
+  name: string,
+  orbital_data: NASA.NeoWs.Orbit
+) => {
   const element = {
     a: orbital_data.semi_major_axis,
     ad: orbital_data.aphelion_distance,
@@ -21,8 +24,12 @@ export const getOrbitViewerLink = (name: string, orbital_data: NASA.NeoWs.Orbit)
     w: orbital_data.perihelion_argument,
   }
 
-  const url = 'https://ssd.jpl.nasa.gov/ov/index.html#load=&lookat=SSB&interval=3&eclipticgrid=false'
-  const elem = JSON.stringify(element).replace('{', '').replace('}', '').replaceAll('"', '')
+  const url =
+    "https://ssd.jpl.nasa.gov/ov/index.html#load=&lookat=SSB&interval=3&eclipticgrid=false"
+  const elem = JSON.stringify(element)
+    .replace("{", "")
+    .replace("}", "")
+    .replaceAll('"', "")
 
   return `${url}&elem=${elem}`
 }

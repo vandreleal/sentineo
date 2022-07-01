@@ -1,16 +1,18 @@
-import { NextPage, NextPageContext } from 'next'
-import dynamic from 'next/dynamic'
-import Head from 'next/head'
+import { NextPage, NextPageContext } from "next"
+import dynamic from "next/dynamic"
+import Head from "next/head"
 
-import { Loading, Spacer } from '@geist-ui/core'
-import packageData from 'package.json'
-import { useRecoilValueLoadable } from 'recoil'
+import { Loading, Spacer } from "@geist-ui/core"
+import packageData from "package.json"
+import { useRecoilValueLoadable } from "recoil"
 
-import { queryNeoAsteroid } from '@/recoil/neo'
+import { queryNeoAsteroid } from "@/recoil/neo"
 
-const CardObjectBasic = dynamic(() => import('@/components/Card/Object/Basic'))
-const CardObjectOrbit = dynamic(() => import('@/components/Card/Object/Orbit'))
-const TableCloseApproach = dynamic(() => import('@/components/Table/CloseApproach'))
+const CardObjectBasic = dynamic(() => import("@/components/Card/Object/Basic"))
+const CardObjectOrbit = dynamic(() => import("@/components/Card/Object/Orbit"))
+const TableCloseApproach = dynamic(
+  () => import("@/components/Table/CloseApproach")
+)
 
 interface AsteroidProps {
   id: string
@@ -27,7 +29,7 @@ const Asteroid: NextPage<AsteroidProps> = ({ id }) => {
           {packageData.displayName} | {data.name}
         </title>
       </Head>
-      {loadable.state === 'hasValue' && (
+      {loadable.state === "hasValue" && (
         <>
           <CardObjectBasic {...data} />
           <Spacer h={1} />
@@ -36,7 +38,7 @@ const Asteroid: NextPage<AsteroidProps> = ({ id }) => {
           <TableCloseApproach {...data} />
         </>
       )}
-      {loadable.state === 'loading' && <Loading>Loading</Loading>}
+      {loadable.state === "loading" && <Loading>Loading</Loading>}
     </>
   )
 }

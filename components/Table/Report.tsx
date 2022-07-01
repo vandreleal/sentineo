@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router'
-import { FC } from 'react'
+import { useRouter } from "next/router"
+import { FC } from "react"
 
-import { Button, ButtonGroup, Collapse, Dot, Grid, Table } from '@geist-ui/core'
-import { useRecoilValue } from 'recoil'
-import styled from 'styled-components'
+import { Button, ButtonGroup, Collapse, Dot, Grid, Table } from "@geist-ui/core"
+import { useRecoilValue } from "recoil"
+import styled from "styled-components"
 
-import { appStateDetailed } from '@/recoil/app'
+import { appStateDetailed } from "@/recoil/app"
 
 const ReportGrid = styled(Grid)`
   overflow: auto;
@@ -26,20 +26,33 @@ const ReportGrid = styled(Grid)`
   }
 `
 
-const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({ near_earth_objects }) => {
+const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({
+  near_earth_objects,
+}) => {
   const settings = useRecoilValue(appStateDetailed)
   const router = useRouter()
 
-  const getAttribute = (rowData: NASA.NeoWs.NearEarthObjects, attribute: string) => {
+  const getAttribute = (
+    rowData: NASA.NeoWs.NearEarthObjects,
+    attribute: string
+  ) => {
     const value = rowData[attribute]
 
-    return <Dot type={value ? 'warning' : 'secondary'}>{value ? 'Yes' : 'No'}</Dot>
+    return (
+      <Dot type={value ? "warning" : "secondary"}>{value ? "Yes" : "No"}</Dot>
+    )
   }
 
-  const getAttributeByPref = (item: NASA.NeoWs.NearEarthObjects, attribute: string) => {
-    const value = item.close_approach_data[0][attribute][settings[attribute].value]
+  const getAttributeByPref = (
+    item: NASA.NeoWs.NearEarthObjects,
+    attribute: string
+  ) => {
+    const value =
+      item.close_approach_data[0][attribute][settings[attribute].value]
 
-    return `${new Intl.NumberFormat().format(value)} ${settings[attribute].unit}`
+    return `${new Intl.NumberFormat().format(value)} ${
+      settings[attribute].unit
+    }`
   }
 
   const getReportData = (object: NASA.NeoWs.NearEarthObjects[]) => {
@@ -48,14 +61,17 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({ near_earth_objects }) =>
     object.forEach((item: NASA.NeoWs.NearEarthObjects) => {
       data.push({
         ...item,
-        prop_miss_distance: getAttributeByPref(item, 'miss_distance'),
+        prop_miss_distance: getAttributeByPref(item, "miss_distance"),
       })
     })
 
     return data
   }
 
-  const renderActions = (_value: undefined, rowData: NASA.NeoWs.NearEarthObjects) => {
+  const renderActions = (
+    _value: undefined,
+    rowData: NASA.NeoWs.NearEarthObjects
+  ) => {
     const { id } = rowData
 
     return (
@@ -73,8 +89,11 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({ near_earth_objects }) =>
     )
   }
 
-  const renderAttribute = (_value: undefined, rowData: NASA.NeoWs.NearEarthObjects) => {
-    return getAttribute(rowData, 'is_potentially_hazardous_asteroid')
+  const renderAttribute = (
+    _value: undefined,
+    rowData: NASA.NeoWs.NearEarthObjects
+  ) => {
+    return getAttribute(rowData, "is_potentially_hazardous_asteroid")
   }
 
   if (!near_earth_objects) {
@@ -89,7 +108,9 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({ near_earth_objects }) =>
         })
         .map((key, index) => {
           const data = getReportData(near_earth_objects[key])
-          const subtitle = `${data.length} close approach${data.length > 1 ? 'es' : ''}`
+          const subtitle = `${data.length} close approach${
+            data.length > 1 ? "es" : ""
+          }`
 
           return (
             <Collapse.Group key={key}>
@@ -109,12 +130,20 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({ near_earth_objects }) =>
                     />
                     <Table.Column label="Name" prop="name" />
                     <Table.Column
-                      label={`Miss Distance (${settings['miss_distance'].unit})`}
+                      label={`Miss Distance (${settings["miss_distance"].unit})`}
                       prop={`prop_miss_distance`}
                       width={200}
                     />
-                    <Table.Column label="Abs Magnitude" prop="absolute_magnitude_h" />
-                    <Table.Column label="" prop="actions" render={renderActions} width={50} />
+                    <Table.Column
+                      label="Abs Magnitude"
+                      prop="absolute_magnitude_h"
+                    />
+                    <Table.Column
+                      label=""
+                      prop="actions"
+                      render={renderActions}
+                      width={50}
+                    />
                   </Table>
                 </ReportGrid>
               </Collapse>

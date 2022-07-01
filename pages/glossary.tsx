@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import { FC } from 'react'
+import Head from "next/head"
+import { FC } from "react"
 
-import { Fieldset, Grid, Link, Text } from '@geist-ui/core'
-import packageData from 'package.json'
+import { Fieldset, Grid, Link, Text } from "@geist-ui/core"
+import packageData from "package.json"
 
-import glossary from '@/data/glossary'
+import glossary from "@/data/glossary"
 
 const Glossary: FC = () => {
   return (
@@ -12,11 +12,16 @@ const Glossary: FC = () => {
       <Head>
         <title>{packageData.displayName} | Glossary</title>
       </Head>
-      <Grid style={{ maxWidth: 600, marginInline: 'auto' }}>
+      <Grid style={{ maxWidth: 600, marginInline: "auto" }}>
         <Grid.Container direction="column" gap={3}>
-          <Grid style={{ textAlign: 'center' }}>
+          <Grid style={{ textAlign: "center" }}>
             <Text h2>Glossary</Text>
-            <Link block href="https://cneos.jpl.NASA.gov/glossary" rel="noopener" target="_blank">
+            <Link
+              block
+              href="https://cneos.jpl.NASA.gov/glossary"
+              rel="noopener"
+              target="_blank"
+            >
               <Text small>https://cneos.jpl.NASA.gov/glossary</Text>
             </Link>
           </Grid>

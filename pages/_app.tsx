@@ -1,21 +1,21 @@
-import { AppProps } from 'next/app'
-import dynamic from 'next/dynamic'
-import Head from 'next/head'
-import { FC, useState } from 'react'
+import { AppProps } from "next/app"
+import dynamic from "next/dynamic"
+import Head from "next/head"
+import { FC, useState } from "react"
 
-import { CssBaseline, GeistProvider, Page } from '@geist-ui/core'
-import packageData from 'package.json'
-import { RecoilRoot } from 'recoil'
-import GlobalStyle from 'styles/global'
+import { CssBaseline, GeistProvider, Page } from "@geist-ui/core"
+import packageData from "package.json"
+import { RecoilRoot } from "recoil"
+import GlobalStyle from "styles/global"
 
-const PageHeader = dynamic(() => import('@/components/Page/Header'))
-const PageFooter = dynamic(() => import('@/components/Page/Footer'))
+const PageHeader = dynamic(() => import("@/components/Page/Header"))
+const PageFooter = dynamic(() => import("@/components/Page/Footer"))
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
-  const [themeType, setThemeType] = useState('dark')
+  const [themeType, setThemeType] = useState("dark")
 
   const switchTheme = () => {
-    setThemeType(lastThemeType => (lastThemeType === 'dark' ? 'light' : 'dark'))
+    setThemeType(lastThemeType => (lastThemeType === "dark" ? "light" : "dark"))
   }
 
   return (
@@ -33,10 +33,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <Page
           dotBackdrop
           style={{
-            width: '100%',
-            height: '100%',
-            maxWidth: '1000px',
-            paddingTop: '1rem',
+            width: "100%",
+            height: "100%",
+            maxWidth: "1000px",
+            paddingTop: "1rem",
           }}
         >
           <PageHeader switchTheme={switchTheme} themeType={themeType} />

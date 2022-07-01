@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC } from "react"
 
-import { Card, Description, Divider, Grid, Image, Link } from '@geist-ui/core'
-import styled from 'styled-components'
+import { Card, Description, Divider, Grid, Image, Link } from "@geist-ui/core"
+import styled from "styled-components"
 
 const ImageBrowser = styled(Image.Browser)`
   width: auto !important;
@@ -24,15 +24,39 @@ const CustomDescription = styled(Description)`
   }
 `
 
-const CardAPOD: FC<NASA.NeoWs.APOD> = ({ copyright, date, explanation, hdurl, media_type, title, url }) => {
+const CardAPOD: FC<NASA.NeoWs.APOD> = ({
+  copyright,
+  date,
+  explanation,
+  hdurl,
+  media_type,
+  title,
+  url,
+}) => {
   return (
     <Card key={title}>
       <Card.Content style={{ padding: 0 }}>
-        {media_type === 'video' ? (
-          <iframe allowFullScreen frameBorder="0" height="540" src={hdurl} width="100%" />
+        {media_type === "video" ? (
+          <iframe
+            allowFullScreen
+            frameBorder="0"
+            height="540"
+            src={hdurl}
+            width="100%"
+          />
         ) : (
-          <ImageBrowser showFullLink anchorProps={{ rel: 'noopener' }} title={title} url={hdurl}>
-            <APOD alt="Astronomy Picture of the Day" height="auto" src={url} width="960px" />
+          <ImageBrowser
+            showFullLink
+            anchorProps={{ rel: "noopener" }}
+            title={title}
+            url={hdurl}
+          >
+            <APOD
+              alt="Astronomy Picture of the Day"
+              height="auto"
+              src={url}
+              width="960px"
+            />
           </ImageBrowser>
         )}
       </Card.Content>
@@ -42,16 +66,20 @@ const CardAPOD: FC<NASA.NeoWs.APOD> = ({ copyright, date, explanation, hdurl, me
           <Grid md={8} sm={12} xs={24}>
             <Description
               content={
-                <Link href="https://apod.NASA.gov" rel="noopener" target="_blank">
+                <Link
+                  href="https://apod.NASA.gov"
+                  rel="noopener"
+                  target="_blank"
+                >
                   {date}
                 </Link>
               }
-              title={'Astronomy Picture of the Day'}
+              title={"Astronomy Picture of the Day"}
             />
           </Grid>
           {copyright && (
             <Grid sm={12} xs={24}>
-              <Description content={copyright} title={'Copyright'} />
+              <Description content={copyright} title={"Copyright"} />
             </Grid>
           )}
           <Grid xs={24}>

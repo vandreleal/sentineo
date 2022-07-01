@@ -1,19 +1,22 @@
-import { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction } from "react"
 
-import { Divider, Drawer, Grid, Radio, Spacer, Text } from '@geist-ui/core'
-import { X } from '@geist-ui/icons'
-import { useRecoilState } from 'recoil'
+import { Divider, Drawer, Grid, Radio, Spacer, Text } from "@geist-ui/core"
+import { X } from "@geist-ui/icons"
+import { useRecoilState } from "recoil"
 
-import ButtonRound from '@/components/Button/Round'
-import settingsGroups from '@/data/settings'
-import { appState } from '@/recoil/app'
+import ButtonRound from "@/components/Button/Round"
+import settingsGroups from "@/data/settings"
+import { appState } from "@/recoil/app"
 
 interface DrawerSettingsProps {
   isVisible: boolean
   setIsVisible: Dispatch<SetStateAction<boolean>>
 }
 
-const DrawerSettings: FC<DrawerSettingsProps> = ({ isVisible, setIsVisible }) => {
+const DrawerSettings: FC<DrawerSettingsProps> = ({
+  isVisible,
+  setIsVisible,
+}) => {
   const [settings, setSettings] = useRecoilState(appState)
 
   const onSelectChange = (val: string, key: string) => {
@@ -23,7 +26,7 @@ const DrawerSettings: FC<DrawerSettingsProps> = ({ isVisible, setIsVisible }) =>
   const renderOptions = (options: string[]) => {
     return options.map((item: string) => (
       <Radio key={item} value={item}>
-        {item.replace(/_/g, ' ')}
+        {item.replace(/_/g, " ")}
       </Radio>
     ))
   }
@@ -60,7 +63,11 @@ const DrawerSettings: FC<DrawerSettingsProps> = ({ isVisible, setIsVisible }) =>
               <Text h2 font={1} mb={1} mt={1} type="warning">
                 {name}
               </Text>
-              <Radio.Group key={key} value={settings[key]} onChange={(val: string) => onSelectChange(val, key)}>
+              <Radio.Group
+                key={key}
+                value={settings[key]}
+                onChange={(val: string) => onSelectChange(val, key)}
+              >
                 {renderOptions(options)}
               </Radio.Group>
               <Spacer h={1} />

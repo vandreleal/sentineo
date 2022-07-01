@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { FC } from "react"
 
-import { Collapse, Description, Grid, Text } from '@geist-ui/core'
+import { Collapse, Description, Grid, Text } from "@geist-ui/core"
 
 const CardObjectOrbit: FC<NASA.NeoWs.NearEarthObject> = ({ orbital_data }) => {
   if (!orbital_data) {
@@ -8,7 +8,11 @@ const CardObjectOrbit: FC<NASA.NeoWs.NearEarthObject> = ({ orbital_data }) => {
   }
 
   const {
-    orbit_class: { orbit_class_description, orbit_class_range, orbit_class_type },
+    orbit_class: {
+      orbit_class_description,
+      orbit_class_range,
+      orbit_class_type,
+    },
   } = orbital_data
 
   return (
@@ -30,13 +34,16 @@ const CardObjectOrbit: FC<NASA.NeoWs.NearEarthObject> = ({ orbital_data }) => {
       >
         <Grid.Container alignContent="center" alignItems="center" gap={3}>
           {Object.keys(orbital_data).map(key => {
-            if (typeof orbital_data[key] === 'object') {
+            if (typeof orbital_data[key] === "object") {
               return
             }
 
             return (
               <Grid key={key} md={6} sm={12} xs={24}>
-                <Description content={orbital_data[key]} title={key.replace(/_/g, ' ')} />
+                <Description
+                  content={orbital_data[key]}
+                  title={key.replace(/_/g, " ")}
+                />
               </Grid>
             )
           })}

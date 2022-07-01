@@ -1,8 +1,8 @@
-import getConfig from 'next/config'
+import getConfig from "next/config"
 
-import { selector } from 'recoil'
+import { selector } from "recoil"
 
-import { getUniqueName } from '@/utils/strings'
+import { getUniqueName } from "@/utils/strings"
 
 const {
   publicRuntimeConfig: { HOST, API_KEY },
@@ -10,7 +10,7 @@ const {
 
 // Retrieve current NEO statistics
 export const queryStats = selector({
-  key: getUniqueName('QueryStats'),
+  key: getUniqueName("QueryStats"),
   get: async () => {
     const response = await fetch(`${HOST}/neo/rest/v1/stats?api_key=${API_KEY}`)
 
