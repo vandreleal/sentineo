@@ -34,7 +34,7 @@
   "dependencies": {
     "@geist-ui/core": "2.3.8",
     "@geist-ui/icons": "1.0.2",
-    "@next/bundle-analyzer": "12.2.1",
+    "@next/bundle-analyzer": "12.2.2",
     "date-fns": "2.28.0",
     "next": "12.2.2",
     "next-compose-plugins": "2.2.1",
