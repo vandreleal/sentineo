@@ -38,7 +38,7 @@
     "date-fns": "2.29.1",
     "next": "12.2.3",
     "next-compose-plugins": "2.2.1",
-    "next-pwa": "5.5.4",
+    "next-pwa": "5.5.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recoil": "0.7.4",
