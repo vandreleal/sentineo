@@ -1,8 +1,13 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 })
-const withPWA = require("next-pwa")
 const runtimeCaching = require("next-pwa/cache")
+
+const withPWA = require("next-pwa")({
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+  runtimeCaching,
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,11 +18,6 @@ const nextConfig = {
     // Will be available on both server and client
     API_KEY: process.env.API_KEY,
     HOST: process.env.HOST,
-  },
-  pwa: {
-    dest: "public",
-    disable: process.env.NODE_ENV === "development",
-    runtimeCaching,
   },
   reactStrictMode: true,
   swcMinify: true,
