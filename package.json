@@ -42,7 +42,7 @@
     "react-dom": "18.2.0",
     "recoil": "0.7.5",
     "styled-components": "5.3.5",
-    "uuid": "8.3.2"
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.16.5",
