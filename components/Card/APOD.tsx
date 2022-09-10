@@ -42,6 +42,7 @@ const CardAPOD: FC<NASA.NeoWs.APOD> = ({
             frameBorder="0"
             height="540"
             src={hdurl}
+            title="Video"
             width="100%"
           />
         ) : (
