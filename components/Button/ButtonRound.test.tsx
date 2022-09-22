@@ -2,7 +2,7 @@ import { Book } from "@geist-ui/icons"
 
 import { render, screen } from "@/utils/test-utils"
 
-import ButtonRound from "./Round"
+import ButtonRound from "./ButtonRound"
 
 describe("Button", () => {
   it("renders a round button with text Glossary", () => {

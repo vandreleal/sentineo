@@ -4,7 +4,7 @@ import { Divider, Drawer, Grid, Radio, Spacer, Text } from "@geist-ui/core"
 import { X } from "@geist-ui/icons"
 import { useRecoilState } from "recoil"
 
-import ButtonRound from "@/components/Button/Round"
+import ButtonRound from "@/components/Button/ButtonRound"
 import settingsGroups from "@/data/settings"
 import { appState } from "@/recoil/app"
 

@@ -8,11 +8,13 @@ import packageData from "package.json"
 
 import { formatDate } from "@/utils/date"
 
-const ButtonRound = dynamic(() => import("@/components/Button/Round"))
-const DrawerSettings = dynamic(() => import("@/components/Drawer/Settings"))
+const ButtonRound = dynamic(() => import("@/components/Button/ButtonRound"))
+const DrawerSettings = dynamic(
+  () => import("@/components/Drawer/DrawerSettings")
+)
 
 interface PageHeaderProps {
-  themeType: string
+  themeType?: string
   switchTheme?: VoidFunction
 }
 
