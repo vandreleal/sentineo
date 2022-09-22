@@ -9,8 +9,8 @@ import { useRecoilValueLoadable } from "recoil"
 import { queryAPOD } from "@/recoil/apod"
 import { queryFeedParameters } from "@/recoil/feed"
 
-const CardAPOD = dynamic(() => import("@/components/Card/APOD"))
-const TableReport = dynamic(() => import("@/components/Table/Report"))
+const CardAPOD = dynamic(() => import("@/components/Card/CardAPOD"))
+const TableReport = dynamic(() => import("@/components/Table/TableReport"))
 
 const Home: FC = () => {
   const loadableAPOD = useRecoilValueLoadable(queryAPOD)

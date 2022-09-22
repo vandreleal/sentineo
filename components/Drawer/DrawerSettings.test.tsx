@@ -1,6 +1,6 @@
 import { render, screen } from "@/utils/test-utils"
 
-import DrawerSettings from "./Settings"
+import DrawerSettings from "./DrawerSettings"
 
 describe("Drawer", () => {
   it("renders the drawer settings", () => {

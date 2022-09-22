@@ -8,8 +8,8 @@ import packageData from "package.json"
 import { RecoilRoot } from "recoil"
 import GlobalStyle from "styles/global"
 
-const PageHeader = dynamic(() => import("@/components/Page/Header"))
-const PageFooter = dynamic(() => import("@/components/Page/Footer"))
+const PageHeader = dynamic(() => import("@/components/Page/PageHeader"))
+const PageFooter = dynamic(() => import("@/components/Page/PageFooter"))
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [themeType, setThemeType] = useState("dark")
