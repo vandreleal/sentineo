@@ -41,7 +41,7 @@ const CardAPOD: FC<NASA.NeoWs.APOD> = ({
             allowFullScreen
             frameBorder="0"
             height="540"
-            src={hdurl}
+            src={url}
             title="Video"
             width="100%"
           />
