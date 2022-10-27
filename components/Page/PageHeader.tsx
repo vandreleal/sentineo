@@ -2,11 +2,28 @@ import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { FC, useState } from "react"
 
-import { Grid, Image, Page, Text } from "@geist-ui/core"
+import { Grid, Image, Input, Page, Text } from "@geist-ui/core"
 import { Book, Moon, Settings, Sun } from "@geist-ui/icons"
 import packageData from "package.json"
+import { useRecoilState } from "recoil"
+import styled from "styled-components"
 
+import { appState } from "@/recoil/app"
 import { formatDate } from "@/utils/date"
+
+const StyledDateInput = styled(Input)`
+  input {
+    margin: 0 !important;
+  }
+
+  &.input-container {
+    height: auto !important;
+  }
+
+  .input-wrapper {
+    border: none !important;
+  }
+`
 
 const ButtonRound = dynamic(() => import("@/components/Button/ButtonRound"))
 const DrawerSettings = dynamic(
@@ -23,6 +40,7 @@ const PageHeader: FC<PageHeaderProps> = ({
   switchTheme,
 }) => {
   const router = useRouter()
+  const [settings, setSettings] = useRecoilState(appState)
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
 
   return (
@@ -33,9 +51,9 @@ const PageHeader: FC<PageHeaderProps> = ({
             <Grid>
               <Image
                 alt="Logo"
-                height="56px"
+                height="40px"
                 src="/telescope.svg"
-                width="56px"
+                width="40px"
               />
             </Grid>
             <Grid>
@@ -51,9 +69,23 @@ const PageHeader: FC<PageHeaderProps> = ({
               >
                 {packageData.displayName}
               </Text>
-              <Text span type="secondary">
-                {formatDate(new Date())}
-              </Text>
+              <StyledDateInput
+                htmlType="date"
+                value={formatDate(settings.date)}
+                onChange={e => {
+                  const date = new Date(e.target.value).toLocaleString(
+                    "en-US",
+                    {
+                      timeZone: "UTC",
+                    }
+                  )
+                  setSettings(prevState => ({
+                    ...prevState,
+                    ...{ date: new Date(date) },
+                  }))
+                }}
+                onKeyDown={e => e.preventDefault()}
+              />
             </Grid>
           </Grid.Container>
         </Grid>
