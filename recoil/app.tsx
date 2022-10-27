@@ -6,6 +6,7 @@ import { getUniqueName } from "@/utils/strings"
 export const appState = atom({
   key: getUniqueName("AppState"),
   default: {
+    date: new Date(),
     estimated_diameter: "kilometers",
     miss_distance: "kilometers",
     relative_velocity: "kilometers_per_second",
