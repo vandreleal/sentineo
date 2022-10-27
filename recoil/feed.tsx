@@ -1,8 +1,9 @@
 import getConfig from "next/config"
 
 import { endOfDay, format, startOfDay, subDays } from "date-fns"
-import { atom, selector } from "recoil"
+import { selector } from "recoil"
 
+import { appState } from "@/recoil/app"
 import { getUniqueName } from "@/utils/strings"
 
 // Get HOST and API_KEY environment variables
@@ -10,23 +11,14 @@ const {
   publicRuntimeConfig: { HOST, API_KEY },
 } = getConfig()
 
-// Today
-const today = new Date()
-
-// Query State
-export const queryState = atom({
-  key: getUniqueName("QueryState"),
-  default: {
-    startDate: startOfDay(today),
-    endDate: endOfDay(today),
-  },
-})
-
 // Get a list of Near Earth Objects within a date range, The max range in one query is 7 days
 export const queryFeedParameters = selector({
   key: getUniqueName("QueryFeedParameters"),
   get: async ({ get }) => {
-    const { startDate, endDate } = get(queryState)
+    const { date } = get(appState)
+
+    const startDate = startOfDay(date)
+    const endDate = endOfDay(date)
 
     // Format Dates
     const start = format(subDays(startDate, 0), "yyyy-MM-dd")
