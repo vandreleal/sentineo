@@ -1370,10 +1370,10 @@
     strict-event-emitter "^0.2.4"
     web-encoding "^1.1.5"
 
-"@next/bundle-analyzer@13.1.4":
-  version "13.1.4"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-13.1.4.tgz#b11135563f39839514a57e91054f5e3f315b9718"
-  integrity sha512-AVfVj3m0uTVdZYj94kVBePZW0niJ3mAX28Kdr8KcuwiefZvBXOOi0bd8ZDGudgAeKEJnZ3mjlCZPOgKgI4JJnA==
+"@next/bundle-analyzer@13.1.5":
+  version "13.1.5"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-13.1.5.tgz#c580bce87e95aaf96e0c61040475781bf93f7b35"
+  integrity sha512-Z+1gyS0Hy+Lpt2k/067YIxmYoKQt0RtHy3EMyR3SMZyZGmx3muZPUBS0Aj+tdfdReVNOK2nQdT8ghSZG9Lwmbw==
   dependencies:
     webpack-bundle-analyzer "4.7.0"
 
