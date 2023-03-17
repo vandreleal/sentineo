@@ -66,7 +66,7 @@
     "lint-staged": "13.1.2",
     "msw": "1.1.0",
     "prettier": "2.8.4",
-    "styled-components": "5.3.8",
+    "styled-components": "5.3.9",
     "typescript": "4.9.5"
   }
 }
