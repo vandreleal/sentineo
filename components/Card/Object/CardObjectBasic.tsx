@@ -52,7 +52,7 @@ const CardObjectBasic: FC<NASA.NeoWs.NearEarthObject> = ({
         <Grid md={6} sm={8} xs={24}>
           <Description
             content={`${formatNumber(
-              estimatedDiameter.estimated_diameter_min
+              estimatedDiameter.estimated_diameter_min,
             )} ${settings.estimated_diameter.unit}`}
             title={"Estimated Diameter (Min)"}
           />
@@ -60,7 +60,7 @@ const CardObjectBasic: FC<NASA.NeoWs.NearEarthObject> = ({
         <Grid md={6} sm={8} xs={24}>
           <Description
             content={`${formatNumber(
-              estimatedDiameter.estimated_diameter_max
+              estimatedDiameter.estimated_diameter_max,
             )} ${settings.estimated_diameter.unit}`}
             title={"Estimated Diameter (Max)"}
           />

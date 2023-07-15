@@ -27,7 +27,7 @@ const StyledDateInput = styled(Input)`
 
 const ButtonRound = dynamic(() => import("@/components/Button/ButtonRound"))
 const DrawerSettings = dynamic(
-  () => import("@/components/Drawer/DrawerSettings")
+  () => import("@/components/Drawer/DrawerSettings"),
 )
 
 interface PageHeaderProps {
@@ -77,7 +77,7 @@ const PageHeader: FC<PageHeaderProps> = ({
                     "en-US",
                     {
                       timeZone: "UTC",
-                    }
+                    },
                   )
                   setSettings(prevState => ({
                     ...prevState,

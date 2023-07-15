@@ -36,7 +36,7 @@ const TableCloseApproach: FC<NASA.NeoWs.NearEarthObject> = ({
 
   const getAttributeByPref = (
     item: NASA.NeoWs.CloseApproach,
-    attribute: string
+    attribute: string,
   ) => {
     const value = item[attribute][settings[attribute].value]
 
@@ -50,7 +50,7 @@ const TableCloseApproach: FC<NASA.NeoWs.NearEarthObject> = ({
       ...item,
       prop_miss_distance: getAttributeByPref(item, "miss_distance"),
       prop_relative_velocity: getAttributeByPref(item, "relative_velocity"),
-    })
+    }),
   )
   const title = `${close_approach_data.length} close approach${
     close_approach_data.length > 1 ? "es" : ""

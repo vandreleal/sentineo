@@ -13,7 +13,7 @@ import packageData from "package.json"
 
 class MyDocument extends Document {
   static async getInitialProps(
-    ctx: DocumentContext
+    ctx: DocumentContext,
   ): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
     const styles = CssBaseline.flush()
