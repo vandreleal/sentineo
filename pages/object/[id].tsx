@@ -9,13 +9,13 @@ import { useRecoilValueLoadable } from "recoil"
 import { queryNeoAsteroid } from "@/recoil/neo"
 
 const CardObjectBasic = dynamic(
-  () => import("@/components/Card/Object/CardObjectBasic")
+  () => import("@/components/Card/Object/CardObjectBasic"),
 )
 const CardObjectOrbit = dynamic(
-  () => import("@/components/Card/Object/CardObjectOrbit")
+  () => import("@/components/Card/Object/CardObjectOrbit"),
 )
 const TableCloseApproach = dynamic(
-  () => import("@/components/Table/TableCloseApproach")
+  () => import("@/components/Table/TableCloseApproach"),
 )
 
 interface AsteroidProps {

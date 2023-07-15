@@ -12,7 +12,7 @@ describe("Button", () => {
         aria-label="Glossary"
         icon={<Book />}
         onClick={jest.fn()}
-      />
+      />,
     )
 
     const button = screen.getByRole("button", {

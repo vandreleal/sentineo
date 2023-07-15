@@ -34,7 +34,7 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({
 
   const getAttribute = (
     rowData: NASA.NeoWs.NearEarthObjects,
-    attribute: string
+    attribute: string,
   ) => {
     const value = rowData[attribute]
 
@@ -45,7 +45,7 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({
 
   const getAttributeByPref = (
     item: NASA.NeoWs.NearEarthObjects,
-    attribute: string
+    attribute: string,
   ) => {
     const value =
       item.close_approach_data[0][attribute][settings[attribute].value]
@@ -70,7 +70,7 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({
 
   const renderActions = (
     _value: undefined,
-    rowData: NASA.NeoWs.NearEarthObjects
+    rowData: NASA.NeoWs.NearEarthObjects,
   ) => {
     const { id } = rowData
 
@@ -91,7 +91,7 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({
 
   const renderAttribute = (
     _value: undefined,
-    rowData: NASA.NeoWs.NearEarthObjects
+    rowData: NASA.NeoWs.NearEarthObjects,
   ) => {
     return getAttribute(rowData, "is_potentially_hazardous_asteroid")
   }
