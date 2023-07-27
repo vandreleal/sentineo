@@ -29,7 +29,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "format": "yarn lint:fix && yarn prettier"
+    "format": "pnpm lint:fix && pnpm prettier"
   },
   "dependencies": {
     "@geist-ui/core": "2.3.8",
