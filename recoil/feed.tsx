@@ -25,7 +25,7 @@ export const queryFeedParameters = selector({
     const end = format(endDate, "yyyy-MM-dd")
 
     const response = await fetch(
-      `${HOST}/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=false&api_key=${API_KEY}`
+      `${HOST}/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=false&api_key=${API_KEY}`,
     )
 
     return response.json()
@@ -37,7 +37,7 @@ export const queryFeedToday = selector({
   key: getUniqueName("QueryFeedToday"),
   get: async () => {
     const response = await fetch(
-      `${HOST}/neo/rest/v1/feed/today?detailed=false&api_key=${API_KEY}`
+      `${HOST}/neo/rest/v1/feed/today?detailed=false&api_key=${API_KEY}`,
     )
 
     return response.json()

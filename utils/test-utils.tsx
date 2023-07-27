@@ -19,7 +19,7 @@ const AllTheProviders: FC<{ children: ReactNode }> = ({ children }) => {
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, "wrapper">
+  options?: Omit<RenderOptions, "wrapper">,
 ) => render(ui, { wrapper: AllTheProviders, ...options })
 
 export * from "@testing-library/react"

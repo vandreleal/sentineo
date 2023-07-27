@@ -20,7 +20,7 @@ export const queryAPOD = selector({
 
     // Retrieve the APOD
     const response = await fetch(
-      `${HOST}/planetary/apod?&api_key=${API_KEY}&date=${formattedDate}`
+      `${HOST}/planetary/apod?&api_key=${API_KEY}&date=${formattedDate}`,
     )
     const json = await response.json()
 

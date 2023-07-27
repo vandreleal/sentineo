@@ -6,7 +6,7 @@ export const getUniqueName = (name: string) => {
 
 export const getOrbitViewerLink = (
   name: string,
-  orbital_data: NASA.NeoWs.Orbit
+  orbital_data: NASA.NeoWs.Orbit,
 ) => {
   const element = {
     a: orbital_data.semi_major_axis,

@@ -13,7 +13,7 @@ export const queryNeoBrowse = selectorFamily({
   key: getUniqueName("QueryNeoBrowse"),
   get: (page: number) => async () => {
     const response = await fetch(
-      `${HOST}/neo/rest/v1/neo/browse?page=${page}&size=20?&api_key=${API_KEY}`
+      `${HOST}/neo/rest/v1/neo/browse?page=${page}&size=20?&api_key=${API_KEY}`,
     )
 
     return response.json()
@@ -25,7 +25,7 @@ export const queryNeoAsteroid = selectorFamily({
   key: getUniqueName("QueryNeoAsteroid"),
   get: (id: string) => async () => {
     const response = await fetch(
-      `${HOST}/neo/rest/v1/neo/${id}?&api_key=${API_KEY}`
+      `${HOST}/neo/rest/v1/neo/${id}?&api_key=${API_KEY}`,
     )
 
     return response.json()
