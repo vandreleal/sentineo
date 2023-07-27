@@ -25,13 +25,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Installation
 
 ```
-$ yarn
+$ pnpm
 ```
 
 ## Local Development
 
 ```
-$ yarn dev
+$ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -39,7 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Build
 
 ```
-$ yarn build
+$ pnpm build
 ```
 
 This command generates the content into the `build` directory.
