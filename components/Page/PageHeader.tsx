@@ -70,6 +70,7 @@ const PageHeader: FC<PageHeaderProps> = ({
                 {packageData.displayName}
               </Text>
               <StyledDateInput
+                crossOrigin={false}
                 htmlType="date"
                 value={formatDate(settings.date)}
                 onChange={e => {
