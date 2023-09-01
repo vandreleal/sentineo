@@ -104,8 +104,8 @@ devDependencies:
     specifier: 14.0.1
     version: 14.0.1
   msw:
-    specifier: 1.2.4
-    version: 1.2.4(typescript@5.2.2)
+    specifier: 1.2.5
+    version: 1.2.5(typescript@5.2.2)
   prettier:
     specifier: 3.0.2
     version: 3.0.2
@@ -5913,9 +5913,9 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw@1.2.4(typescript@5.2.2):
-    resolution: {integrity: sha512-Z0J00iH2EBTsBNPXbtKiLs2iSFz1py32BAgTlsSDu+WKXRW8gOJJ3m2LGk6QEraZfbL7IBJ/ghwDXUVu5CyGpw==}
-    engines: {node: '>=14', pnpm: ~7.12}
+  /msw@1.2.5(typescript@5.2.2):
+    resolution: {integrity: sha512-Y3MwnAHX3d162eSWrEUeRdCv3+8hmgz/+Wh7OUkE6VB55+YTswxrep3yU3evZnKWHJGAM63G1s+olAgzIFdYtQ==}
+    engines: {node: '>=14'}
     hasBin: true
     requiresBuild: true
     peerDependencies:
