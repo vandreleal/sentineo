@@ -12,8 +12,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2(@geist-ui/core@2.3.8)(react@18.2.0)
   '@next/bundle-analyzer':
-    specifier: 13.5.3
-    version: 13.5.3
+    specifier: 13.5.4
+    version: 13.5.4
   date-fns:
     specifier: 2.30.0
     version: 2.30.0
@@ -1800,8 +1800,8 @@ packages:
       - supports-color
     dev: true
 
-  /@next/bundle-analyzer@13.5.3:
-    resolution: {integrity: sha512-AUHl9hu/0SNo2TCu9awOGY5hJdQHTPThYbjKk3rmjL04GfYAotn5i5pFQGqe209mbCxtu+QnvMEHLXU4GdFi1Q==}
+  /@next/bundle-analyzer@13.5.4:
+    resolution: {integrity: sha512-2vgmkuSKyTiyI7NorL+zYerxQRvzmSGbCDr2/kVrbKX28a4UNhbYn8/cQW8z6pvx0EncEFpd0GCUA5r9aRLhJg==}
     dependencies:
       webpack-bundle-analyzer: 4.7.0
     transitivePeerDependencies:
