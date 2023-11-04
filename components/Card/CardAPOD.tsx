@@ -13,7 +13,7 @@ const ImageBrowser = styled(Image.Browser)`
 
 const APOD = styled(Image)`
   img {
-    max-height: min(540px, 25vh);
+    max-height: max(540px, 25vh);
     object-fit: cover !important;
   }
 `
@@ -39,7 +39,6 @@ const CardAPOD: FC<NASA.NeoWs.APOD> = ({
         {media_type === "video" ? (
           <iframe
             allowFullScreen
-            frameBorder="0"
             height="540"
             src={url}
             title="Video"
