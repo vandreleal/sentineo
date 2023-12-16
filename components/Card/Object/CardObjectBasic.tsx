@@ -68,12 +68,19 @@ const CardObjectBasic: FC<NASA.NeoWs.NearEarthObject> = ({
       </Grid.Container>
       <Card.Footer>
         <Text span>Links:</Text>
-        <Link block href={nasa_jpl_url} rel="noopener" target="_blank">
+        <Link
+          block
+          href={nasa_jpl_url}
+          placeholder="NASA JPL Link"
+          rel="noopener"
+          target="_blank"
+        >
           NASA JPL
         </Link>
         <Link
           block
           href={getOrbitViewerLink(name, orbital_data)}
+          placeholder="Orbit Viewer Link"
           rel="noopener"
           target="_blank"
         >
