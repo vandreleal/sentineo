@@ -23,6 +23,7 @@ const PageFooter: FC = () => {
           <Text b span font={0.875}>
             <Link
               href={packageData.homepage}
+              placeholder={`Version ${packageData.version}`}
               rel="noopener noreferrer"
               target="_blank"
             >

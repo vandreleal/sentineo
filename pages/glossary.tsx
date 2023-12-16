@@ -19,6 +19,7 @@ const Glossary: FC = () => {
             <Link
               block
               href="https://cneos.jpl.NASA.gov/glossary"
+              placeholder="Glossary Link"
               rel="noopener"
               target="_blank"
             >

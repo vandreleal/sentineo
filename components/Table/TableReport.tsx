@@ -78,6 +78,7 @@ const TableReport: FC<NASA.NeoWs.NearEarthObjects> = ({
       <ButtonGroup ghost>
         <Button
           font={1.25}
+          placeholder="Object Details"
           scale={1 / 3}
           onClick={() => {
             router.push(`/object/${id}`)

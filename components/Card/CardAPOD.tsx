@@ -48,6 +48,7 @@ const CardAPOD: FC<NASA.NeoWs.APOD> = ({
           <ImageBrowser
             showFullLink
             anchorProps={{ rel: "noopener" }}
+            placeholder={title}
             title={title}
             url={hdurl}
           >
@@ -68,6 +69,7 @@ const CardAPOD: FC<NASA.NeoWs.APOD> = ({
               content={
                 <Link
                   href="https://apod.NASA.gov"
+                  placeholder="Astronomy Picture of the Day"
                   rel="noopener"
                   target="_blank"
                 >

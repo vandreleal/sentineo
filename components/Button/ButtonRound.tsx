@@ -13,10 +13,11 @@ const StyledButton = styled(Button)`
 
 interface ButtonRoundProps extends ButtonProps {
   icon: ReactNode
+  placeholder?: string
 }
 
-const ButtonRound: FC<ButtonRoundProps> = ({ icon, ...props }) => {
-  return <StyledButton icon={icon} {...props} />
+const ButtonRound: FC<ButtonRoundProps> = ({ icon, placeholder, ...props }) => {
+  return <StyledButton icon={icon} placeholder={placeholder} {...props} />
 }
 
 export default ButtonRound
