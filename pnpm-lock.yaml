@@ -7,10 +7,10 @@ settings:
 dependencies:
   '@geist-ui/core':
     specifier: 2.3.8
-    version: 2.3.8(react-dom@18.2.0)(react@18.2.0)
+    version: 2.3.8(react-dom@18.2.0)(react@18.3.0)
   '@geist-ui/icons':
     specifier: 1.0.2
-    version: 1.0.2(@geist-ui/core@2.3.8)(react@18.2.0)
+    version: 1.0.2(@geist-ui/core@2.3.8)(react@18.3.0)
   '@next/bundle-analyzer':
     specifier: 14.1.4
     version: 14.1.4
@@ -19,19 +19,19 @@ dependencies:
     version: 3.6.0
   next:
     specifier: 14.1.4
-    version: 14.1.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+    version: 14.1.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.3.0)
   next-pwa:
     specifier: 5.6.0
     version: 5.6.0(@babel/core@7.22.9)(next@14.1.4)(webpack@5.88.2)
   react:
-    specifier: 18.2.0
-    version: 18.2.0
+    specifier: 18.3.0
+    version: 18.3.0
   react-dom:
     specifier: 18.2.0
-    version: 18.2.0(react@18.2.0)
+    version: 18.2.0(react@18.3.0)
   recoil:
     specifier: 0.7.7
-    version: 0.7.7(react-dom@18.2.0)(react@18.2.0)
+    version: 0.7.7(react-dom@18.2.0)(react@18.3.0)
   sharp:
     specifier: 0.33.3
     version: 0.33.3
@@ -45,7 +45,7 @@ devDependencies:
     version: 6.4.2(jest@29.7.0)
   '@testing-library/react':
     specifier: 14.2.2
-    version: 14.2.2(react-dom@18.2.0)(react@18.2.0)
+    version: 14.2.2(react-dom@18.2.0)(react@18.3.0)
   '@testing-library/user-event':
     specifier: 14.5.2
     version: 14.5.2(@testing-library/dom@9.3.1)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: 20.12.4
     version: 20.12.4
   '@types/react':
-    specifier: 18.2.65
-    version: 18.2.65
+    specifier: 18.3.0
+    version: 18.3.0
   '@types/react-dom':
     specifier: 18.2.24
     version: 18.2.24
@@ -111,7 +111,7 @@ devDependencies:
     version: 3.2.5
   styled-components:
     specifier: 6.1.8
-    version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
+    version: 6.1.8(react-dom@18.2.0)(react@18.3.0)
   typescript:
     specifier: 5.4.4
     version: 5.4.4
@@ -1495,25 +1495,25 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@geist-ui/core@2.3.8(react-dom@18.2.0)(react@18.2.0):
+  /@geist-ui/core@2.3.8(react-dom@18.2.0)(react@18.3.0):
     resolution: {integrity: sha512-OKwGgTA4+fBM41eQbqDoUj4XBycZbYH7Ynrn6LPO5yKX7zeWPu/R7HN3vB4/oHt34VTDQI5sDNb1SirHvNyB5w==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
     dependencies:
       '@babel/runtime': 7.22.6
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.0
+      react-dom: 18.2.0(react@18.3.0)
     dev: false
 
-  /@geist-ui/icons@1.0.2(@geist-ui/core@2.3.8)(react@18.2.0):
+  /@geist-ui/icons@1.0.2(@geist-ui/core@2.3.8)(react@18.3.0):
     resolution: {integrity: sha512-Npfa0NW6fQ31qw/+iMPWbs1hAcJ/3FqBjSLYgEfITDqy/3TJFpFKeVyK04AC/hTmYTsdNruVYczqPNcham5FOQ==}
     peerDependencies:
       '@geist-ui/core': '>=1.0.0'
       react: '>=16.13.0'
     dependencies:
-      '@geist-ui/core': 2.3.8(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
+      '@geist-ui/core': 2.3.8(react-dom@18.2.0)(react@18.3.0)
+      react: 18.3.0
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -2335,7 +2335,7 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react@14.2.2(react-dom@18.2.0)(react@18.2.0):
+  /@testing-library/react@14.2.2(react-dom@18.2.0)(react@18.3.0):
     resolution: {integrity: sha512-SOUuM2ysCvjUWBXTNfQ/ztmnKDmqaiPV3SvoIuyxMUca45rbSWWAT/qB8CUs/JQ/ux/8JFs9DNdFQ3f6jH3crA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2345,8 +2345,8 @@ packages:
       '@babel/runtime': 7.22.6
       '@testing-library/dom': 9.3.1
       '@types/react-dom': 18.2.24
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.0
+      react-dom: 18.2.0(react@18.3.0)
     dev: true
 
   /@testing-library/user-event@14.5.2(@testing-library/dom@9.3.1):
@@ -2458,7 +2458,7 @@ packages:
   /@types/hoist-non-react-statics@3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.2.65
+      '@types/react': 18.3.0
       hoist-non-react-statics: 3.3.2
     dev: true
 
@@ -2515,14 +2515,13 @@ packages:
   /@types/react-dom@18.2.24:
     resolution: {integrity: sha512-cN6upcKd8zkGy4HU9F1+/s98Hrp6D4MOcippK4PoE8OZRngohHZpbJn1GsaDLz87MqvHNoT13nHvNqM9ocRHZg==}
     dependencies:
-      '@types/react': 18.2.65
+      '@types/react': 18.3.0
     dev: true
 
-  /@types/react@18.2.65:
-    resolution: {integrity: sha512-98TsY0aW4jqx/3RqsUXwMDZSWR1Z4CUlJNue8ueS2/wcxZOsz4xmW1X8ieaWVRHcmmQM3R8xVA4XWB3dJnWwDQ==}
+  /@types/react@18.3.0:
+    resolution: {integrity: sha512-DiUcKjzE6soLyln8NNZmyhcQjVv+WsUIFSqetMN0p8927OztKT4VTfFTqsbAi5oAGIcgOmOajlfBqyptDDjZRw==}
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.23.0
       csstype: 3.1.2
     dev: true
 
@@ -2531,10 +2530,6 @@ packages:
     dependencies:
       '@types/node': 20.12.4
     dev: false
-
-  /@types/scheduler@0.23.0:
-    resolution: {integrity: sha512-YIoDCTH3Af6XM5VuwGG/QL/CJqga1Zm3NkU3HZ4ZHK2fRMPYP1VczsTUqtsf43PH/iJNVlPHAo2oWX7BSdB2Hw==}
-    dev: true
 
   /@types/semver@7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
@@ -2552,7 +2547,7 @@ packages:
     resolution: {integrity: sha512-mmiVvwpYklFIv9E8qfxuPyIt/OuyIrn6gMOAMOFUO3WJfSrSE+sGUoa4PiZj77Ut7bKZpaa6o1fBKS/4TOEvnA==}
     dependencies:
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.2.65
+      '@types/react': 18.3.0
       csstype: 3.1.2
     dev: true
 
@@ -6198,7 +6193,7 @@ packages:
       babel-loader: 8.3.0(@babel/core@7.22.9)(webpack@5.88.2)
       clean-webpack-plugin: 4.0.0(webpack@5.88.2)
       globby: 11.1.0
-      next: 14.1.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+      next: 14.1.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.3.0)
       terser-webpack-plugin: 5.3.9(webpack@5.88.2)
       workbox-webpack-plugin: 6.6.0(webpack@5.88.2)
       workbox-window: 6.6.0
@@ -6212,7 +6207,7 @@ packages:
       - webpack
     dev: false
 
-  /next@14.1.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0):
+  /next@14.1.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.3.0):
     resolution: {integrity: sha512-1WTaXeSrUwlz/XcnhGTY7+8eiaFvdet5z9u3V2jb+Ek1vFo0VhHKSAIJvDWfQpttWjnyw14kBeq28TPq7bTeEQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -6233,9 +6228,9 @@ packages:
       caniuse-lite: 1.0.30001591
       graceful-fs: 4.2.11
       postcss: 8.4.31
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(@babel/core@7.22.9)(react@18.2.0)
+      react: 18.3.0
+      react-dom: 18.2.0(react@18.3.0)
+      styled-jsx: 5.1.1(@babel/core@7.22.9)(react@18.3.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.1.4
       '@next/swc-darwin-x64': 14.1.4
@@ -6631,13 +6626,13 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /react-dom@18.2.0(react@18.2.0):
+  /react-dom@18.2.0(react@18.3.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
       loose-envify: 1.4.0
-      react: 18.2.0
+      react: 18.3.0
       scheduler: 0.23.0
 
   /react-is@16.13.1:
@@ -6652,13 +6647,13 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react@18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+  /react@18.3.0:
+    resolution: {integrity: sha512-RPutkJftSAldDibyrjuku7q11d3oy6wKOyPe5K1HA/HwwrXcEqBdHsLypkC2FFYjP7bPUa6gbzSBhw4sY2JcDg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
 
-  /recoil@0.7.7(react-dom@18.2.0)(react@18.2.0):
+  /recoil@0.7.7(react-dom@18.2.0)(react@18.3.0):
     resolution: {integrity: sha512-8Og5KPQW9LwC577Vc7Ug2P0vQshkv1y3zG3tSSkWMqkWSwHmE+by06L8JtnGocjW6gcCvfwB3YtrJG6/tWivNQ==}
     peerDependencies:
       react: '>=16.13.1'
@@ -6671,8 +6666,8 @@ packages:
         optional: true
     dependencies:
       hamt_plus: 1.0.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.0
+      react-dom: 18.2.0(react@18.3.0)
     dev: false
 
   /redent@3.0.0:
@@ -7274,7 +7269,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /styled-components@6.1.8(react-dom@18.2.0)(react@18.2.0):
+  /styled-components@6.1.8(react-dom@18.2.0)(react@18.3.0):
     resolution: {integrity: sha512-PQ6Dn+QxlWyEGCKDS71NGsXoVLKfE1c3vApkvDYS5KAK+V8fNWGhbSUEo9Gg2iaID2tjLXegEW3bZDUGpofRWw==}
     engines: {node: '>= 16'}
     peerDependencies:
@@ -7287,14 +7282,14 @@ packages:
       css-to-react-native: 3.2.0
       csstype: 3.1.2
       postcss: 8.4.31
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
+      react: 18.3.0
+      react-dom: 18.2.0(react@18.3.0)
       shallowequal: 1.1.0
       stylis: 4.3.1
       tslib: 2.5.0
     dev: true
 
-  /styled-jsx@5.1.1(@babel/core@7.22.9)(react@18.2.0):
+  /styled-jsx@5.1.1(@babel/core@7.22.9)(react@18.3.0):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -7309,7 +7304,7 @@ packages:
     dependencies:
       '@babel/core': 7.22.9
       client-only: 0.0.1
-      react: 18.2.0
+      react: 18.3.0
     dev: false
 
   /stylis@4.3.1:
