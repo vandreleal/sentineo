@@ -20,7 +20,6 @@ const nextConfig = {
     HOST: process.env.HOST,
   },
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 module.exports = () => {
