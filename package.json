@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/vandreleal/sentineo#readme",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "dev": "next dev --turbopack",
     "build": "next build",
     "export": "next export",
